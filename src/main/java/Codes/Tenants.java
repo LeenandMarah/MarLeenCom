@@ -3,7 +3,7 @@ package Codes;
 public class Tenants extends User {
 
 	public Tenants(String username, String password, String pId, String type, int logged, String phoneNum) {
-		super(username, password, pId, type, logged, phoneNum);
+		super(username, password, pId, type, phoneNum);
 		   this.setType("Tenant");
 	}
 	

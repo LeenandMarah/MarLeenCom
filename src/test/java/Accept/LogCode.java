@@ -1,71 +1,77 @@
 package Accept;
 
+import Codes.MyData;
+
+import Codes.User;
 
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import Codes.Admin;
-import Codes.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+import DB.UserInfo;
 public class LogCode {
-	Admin a = new Admin("leen","123marah","1","", 0,"1234567");
-	@Given("that user is not logged in")
-	public void thatUserIsNotLoggedIn() {
 	
-	    assertTrue("hi",a.getLogged()==0);
+	String username;
+	String password;
+	String type;
+	MyData d;
+	Boolean status;
+	public LogCode(MyData d) {
+		this.d=d;
+	}
+
+
+
+@Given("that user is not logged in")
+public void thatUserIsNotLoggedIn() {
+	assertTrue(d.adminIsLogged==false&&d.ownerIsLogged==false&&d.tenantIsLogged==false);
+}
+
+@When("username is {string}")
+public void usernameIs(String string) {
+   this.username=string;
+}
+
+@When("password is {string}")
+public void passwordIs(String string) {
+    this.password=string;
+}
+
+@Then("logged in successfully as Admin")
+public void loggedInSuccessfullyAsAdmin() {
+      d.checkLogin(username, password);
+      assertTrue(d.adminIsLogged);
+}
+
+
+
+@Then("log in faild")
+public void logInFaild() {
+	 d.checkLogin(username, password);
+     assertTrue(d.adminIsLogged==false||d.ownerIsLogged==false||d.tenantIsLogged==false);
+}
+
+
+@Then("logged in successfully as owner")
+public void loggedInSuccessfullyAsOwner() {
+	 d.checkLogin(username, password);
+   
+}
+
+
+@Then("logged in successfully as tenant")
+public void loggedInSuccessfullyAsTenant() {
+	 d.checkLogin(username, password);
+     assertTrue(d.tenantIsLogged);
+}
 	
-		
-	     
-	}
-
-	@When("username is {string} which type is admin")
-	public void usernameIsWhichTypeIsAdmin(String string) {
-	    assertTrue( a.getUsername().equals(string));
-	    assertTrue(a.getType().equals("Admin"));
-	}
-
-	@When("password is correct {string}")
-	public void passwordIsCorrect(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	     assertTrue(a.getPassword().equalsIgnoreCase(string));
-	}
-
-	@Then("logged in successfully")
-	public void loggedInSuccessfully() {
-	       a.setLogged(1);
-	}
-
-	@When("password is false {string}")
-	public void passwordIsFalse(String string) {
-		 assertFalse(a.getPassword().equalsIgnoreCase(string));
-	}
-
-	@Then("log in faild")
-	public void logInFaild() {
-	    // Write code here that turns the phrase above into concrete actions
-	   
-	}
-
-	@When("username is not found which type is admin")
-	public void usernameIsNotFoundWhichTypeIsAdmin() {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("logged in faild")
-	public void loggedInFaild() {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new io.cucumber.java.PendingException();
-	}
-
 	
 	
-	
-	
+
 
 
 }

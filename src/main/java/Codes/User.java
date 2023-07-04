@@ -6,7 +6,7 @@ public class User {
 	private String pId;
 	private String type;
 	private String phoneNum;
-	private int logged;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -31,19 +31,14 @@ public class User {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public int getLogged() {
-		return logged;
-	}
-	public void setLogged(int logged) {
-		this.logged = logged;
-	}
-	public User(String username, String password, String pId, String type, int logged,String phoneNum) {
+	
+	public User(String username, String password, String pId, String type,String phoneNum) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.pId = pId;
 		this.type = type;
-		this.logged = logged;
+		
 		this.phoneNum=phoneNum;
 	}
 	
@@ -53,6 +48,9 @@ public class User {
 	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
 	}
+	
+		
+	
 	
 	
 	
