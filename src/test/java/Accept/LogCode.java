@@ -2,6 +2,10 @@ package Accept;
 
 import Codes.MyData;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'marah-test' of https://github.com/leenfhd/MarLeenCom.git
 import Codes.User;
 
 

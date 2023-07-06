@@ -43,7 +43,21 @@ public class Building {
 	public void setApartsNum(int apartsNum) {
 		this.apartsNum = apartsNum;
 	}
+<<<<<<< HEAD
     
+=======
+	
+	
+	public static boolean IfFound(String buldingid) {
+		for(int i=0;i<DB.BuldingInfo.buildings.size();i++)
+		{
+			if(DB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
+				return true;
+			
+		}
+		return false;
+	}
+>>>>>>> branch 'marah-test' of https://github.com/leenfhd/MarLeenCom.git
     
     
     
