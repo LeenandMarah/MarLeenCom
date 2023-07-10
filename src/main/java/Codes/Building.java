@@ -13,6 +13,10 @@ public class Building {
 		this.location = location;
 		this.apartsNum = apartsNum;
 	}
+	static int floor;
+	public Building() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getbId() {
 		return bId;
 	}
@@ -54,6 +58,33 @@ public class Building {
 		}
 		return false;
 	}
+	
+	public static Building FindBuilding(String buldingid) {
+		for(int i=0;i<DB.BuldingInfo.buildings.size();i++)
+		{
+			if(DB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
+				return DB.BuldingInfo.buildings.get(i);
+			
+		}
+		return null;
+	}
+	
+	public static void buildingfloor(String buldingid) {
+		Building b=new Building();
+		
+		b=FindBuilding(buldingid);
+		floor=b.getFloors();
+		for(int i=floor; i>0;i--)
+		{
+			System.out.println("Floor"+i);
+		}
+		
+		
+		
+	}
+	
+	
+	
     
     
     

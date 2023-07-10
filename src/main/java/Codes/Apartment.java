@@ -1,7 +1,8 @@
 package Codes;
 import java.util.ArrayList;
 
-import DB.apartmentinfo;
+
+import DB.Apartmentinfo;
 public class Apartment {
 	private String buildId;
 	private int price;
@@ -204,38 +205,99 @@ public class Apartment {
 		p.setPrice(price2);
 		
 		
-		 DB.apartmentinfo.apartments.add(p);
-		return  DB.apartmentinfo.apartments.size();
+		 DB.Apartmentinfo.apartments.add(p);
+		return  DB.Apartmentinfo.apartments.size();
 		
 	}
 	
 	
 	
   public static  int sizeOfApartments() {
-	  return  DB.apartmentinfo.apartments.size();
+	  return  DB.Apartmentinfo.apartments.size();
   }
 	
 	
 
   public static boolean IfFoundap(String apid) {
-		for(int i=0;i<DB.apartmentinfo.apartments.size();i++)
+		for(int i=0;i<DB.Apartmentinfo.apartments.size();i++)
 		{
-			if(apartmentinfo.apartments.get(i).getaId().equals(apid))
+			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
 				return true;
 			
 		}
 		return false;
 	}
 	public static Apartment findmyapartment(String apid) {
-		for(int i=0;i<DB.apartmentinfo.apartments.size();i++)
+		for(int i=0;i<DB.Apartmentinfo.apartments.size();i++)
 		{
-			if(apartmentinfo.apartments.get(i).getaId().equals(apid))
-				return DB.apartmentinfo.apartments.get(i);
+			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
+				return DB.Apartmentinfo.apartments.get(i);
 			
 		}
+		
 		return null;
 	}
 	
+	public static boolean ChangeApartmentPhoto(String apid,String photo)
+	{
+		Apartment p =new Apartment("1","1","ff",2,2,0);
+			p= Apartment.findmyapartment(apid);			
+			 p.setPhoto(photo);
+			 return true;
+			 
+			
+ 		
+	}
+
+
+
+
+	public static boolean ChangeApartmentPrice(String apID, int price2) {
+		// TODO Auto-generated method stub
+		Apartment p =new Apartment("1","1","ff",2,2,0);
+		
+			p= Apartment.findmyapartment(apID);			
+			 p.setPrice(price2);
+			 return true;
+		
+	}
+
+
+
+
+	public static boolean ChangeApartmentMax(String apID, int max2) {
+		// TODO Auto-generated method stub
+		
+		Apartment p =new Apartment("1","1","ff",2,2,0);
+		
+		p= Apartment.findmyapartment(apID);			
+		 p.setMax(max2);
+		 return true;
+	}
+
+
+
+
+	public static boolean ChangeApartmentStudentType(String apID, boolean studentType2) {
+		// TODO Auto-generated method stub
+      Apartment p =new Apartment("1","1","ff",2,2,0);
+		
+		p= Apartment.findmyapartment(apID);			
+		 p.setStudentType(studentType2);
+		 return true;
+		
+	}
+	
+	public static boolean Printservices(String apID) {
+		// TODO Auto-generated method stub
+		
+		Apartment p =new Apartment("1","1","ff",2,2,0);
+		
+		p= Apartment.findmyapartment(apID);			
+		p.setInformation(apID);
+		 return true;
+	}
+
 	
 	
 	
