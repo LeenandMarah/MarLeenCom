@@ -22,7 +22,8 @@ public class Main {
 		  String command;
 		  String buldingid;
 		  String apID;
-		  int price;
+		  String answer="";
+		   int price;
 		  int numofbeds;
 		  int numofbath;
 		  int balcon;
@@ -35,7 +36,10 @@ public class Main {
 		  String location;
 		  int num;
 		  int i;
-		  
+		  boolean studentType;
+
+
+
 		LOGGER.info("-> -> -> -> -> -> -> -> -> ->Sakan Marlee <- <- <- <- <- <- <- <- <- <-");
 		
 		
@@ -62,6 +66,24 @@ public class Main {
 	    			 d.logOut("Admin");
 	    			 LOGGER.info("Bye Admin");	    			 
 	    			
+	    			 break;
+	    		 }
+	    		 if(command.equals("See Request")){
+	    			 if(d.requst)
+	    			 {
+	    				 d.requst=false;
+	    				answer= d.sendRequest();
+	    				 if (answer.equals("yes"))
+	    				 {
+	    					Apartment.addApartment(d.buldingid, d.apID, d.photo, d.numofbeds,d.numofbath, d.balcon, d.floor, d.max, d.price);
+	    				 }
+
+	    			 }
+	    			 else
+	    			 {
+	    				 LOGGER.info("NO RQUESTS");
+	    			 }
+
 	    			 break;
 	    		 }
 	    		 if(command.equals("add Building")) {
@@ -105,7 +127,9 @@ public class Main {
 			    		 max=input.nextInt();
 			    		 LOGGER.info("enter price");
 			    		 price=input.nextInt();
-			    		
+
+			    		num=Apartmentinfo.apartments.size();
+			    	 Apartment.addApartment(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price)	;
 			    		num=Apartmentinfo.apartments.size();
 			    		 LOGGER.info(Integer.toString(num)+"hiiiiiii");
 			    		 break;
@@ -127,8 +151,61 @@ public class Main {
 	    				ap= DB.Apartmentinfo.findmyapartment(apID);
 	    				LOGGER.info("enter new photo");
 		    			 photo=input.nextLine();
-		    			 ap.setPhoto(photo);
-		    			 LOGGER.info(ap.getPhoto());
+		    			Apartment.ChangeApartmentPhoto(apID, photo);
+
+			    		}
+	    			 else
+			    		{
+			    			 LOGGER.info("Opps! no such apartment");
+			    		}
+	    		 }
+
+	    		 if(command.equals("change apartment price"))
+	    		 {
+	    			 LOGGER.info("enter Apartment id");
+	    			 apID=input.nextLine();
+	    			 if(DB.Apartmentinfo.IfFoundap(apID))
+			    		{
+
+	    				LOGGER.info("enter new price");
+		    			 price=input.nextInt();
+		    			Apartment.ChangeApartmentPrice(apID, price);
+
+			    		}
+	    			 else
+			    		{
+			    			 LOGGER.info("Opps! no such apartment");
+			    		}
+	    		 }
+
+	    		 if(command.equals("change apartment max"))
+	    		 {
+	    			 LOGGER.info("enter Apartment id");
+	    			 apID=input.nextLine();
+	    			 if(DB.Apartmentinfo.IfFoundap(apID))
+			    		{
+
+	    				LOGGER.info("enter new max");
+		    			max=input.nextInt();
+		    			Apartment.ChangeApartmentMax(apID, max);
+
+			    		}
+	    			 else
+			    		{
+			    			 LOGGER.info("Opps! no such apartment");
+			    		}
+	    		 }
+
+	    		 if(command.equals("change apartment student Type"))
+	    		 {
+	    			 LOGGER.info("enter Apartment id");
+	    			 apID=input.nextLine();
+	    			 if(DB.Apartmentinfo.IfFoundap(apID))
+			    		{
+
+	    				LOGGER.info("enter student Type");
+	    	             studentType=input.nextBoolean();
+		    			Apartment.ChangeApartmentStudentType(apID,studentType);
 	    				
 			    		}
 	    			 else
@@ -156,6 +233,66 @@ public class Main {
 		    			
 		    			 break;
 		    		 }
+
+		    		 if(command.equals("Dashboard"))
+		    		 {
+		    			 User user=new User();
+
+		    			 user=d.checkLogin(username, password);
+		    			 BuldingInfo.FindBuildingForOwner(user.getpId());
+		    			 for (Building b: BuldingInfo.Ownerbuildings)
+		    			 {
+
+		    				 System.out.println("building"+b.getbId());
+
+
+		    			 }
+		    			 LOGGER.info("choose the bulding you want");
+		    			 buldingid=input.nextLine();
+
+		    			 Building.buildingfloor(buldingid);
+		    			 LOGGER.info("choose the Floor you want");
+		    			 floor= input.nextInt();
+		    			 Apartmentinfo.BuldingApartments(buldingid,floor);
+		    			 for (Apartment a: Apartmentinfo.BuildingApartments )
+		    			 {
+
+		    				 System.out.println("apartment"+a.getaId());
+
+
+		    			 }
+
+
+		    		 }
+
+		    		 if(command.equals("Send Request"))
+		    		 {
+		    			 LOGGER.info("enter bulding id");
+			    		 buldingid=input.nextLine();
+
+			    			 LOGGER.info("enter Apartment id");
+			    			 apID=input.nextLine();
+				    		 LOGGER.info("enter photo");
+				    		 photo=input.nextLine();
+				    		 LOGGER.info("enter number of bedrooms");
+				    		 numofbeds=input.nextInt();
+				    		 LOGGER.info("enter number of Bathrooms");
+				    		 numofbath=input.nextInt();
+				    		 LOGGER.info("enter enter number of Balcons");
+				    		 balcon=input.nextInt();
+				    		 LOGGER.info("enter number of floor");
+				    		 floor=input.nextInt();
+				    		 LOGGER.info("enter number of people");
+				    		 max=input.nextInt();
+				    		 LOGGER.info("enter price");
+				    		 price=input.nextInt();
+				    	// Apartment.addApartment(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price)	;
+				    		d.requst=true;
+				    		 d.saveRequest(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price);
+				    		 break;
+
+
+		    		 }
 	       }
 	    	  
 	       }
@@ -167,7 +304,6 @@ public class Main {
 		    		 if(command.equals("LogOut")){
 		    			 d.logOut("Tenant");
 		    			 LOGGER.info("Bye Tenant");
-		    			 
 		    			
 		    			 break;
 		    		 }
@@ -178,29 +314,29 @@ public class Main {
 		    	       LOGGER.info("\n"+"* view"+"\n"+"* show info"+"\n"+"* book");
 		    	       command = input.nextLine();
 		    	       if(command.equals("view")) {
-		    	    	   f.viewAvilableAparts();   
-		    	    	   
+		    	    	   f.viewAvilableAparts();
+
 		    	       }
-		    	       
+
 		    	       else if(command.equals("show info")) {
 		    	    	   LOGGER.info("enter the apartment ID:");
 		    	    	   command = input.nextLine();
 		    	    	   f.viewInfo(command);
-		    	    	   
+
 		    	       }
-		    	       
+
 		    	       else if(command.equals("book")) {
 			    			 LOGGER.info("enter apartment ID:");
 			    			 command = input.nextLine();
 			    			 f.book(command);
-			    		 
+
 			    		 }
-		    	       
+
 		    		 }
-		    		 
-		    		
-		    		 
-		    	
+
+
+
+
 		    		 else {
 		    			 LOGGER.info("Please enter valid command");
 		    			 break;

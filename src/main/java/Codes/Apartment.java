@@ -21,6 +21,13 @@ public class Apartment {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
 	public Apartment()
 	{
 		
@@ -74,7 +81,7 @@ public class Apartment {
 	
 	
 	
-	
+
 
 
 
@@ -107,9 +114,7 @@ public class Apartment {
 		return numPeople;
 	}
 	public void setNumPeople(int numPeople) {
-		
 		this.numPeople = numPeople;
-	
 	}
 	public String getInformation() {
 		return information;
@@ -175,8 +180,8 @@ public class Apartment {
 	
 	
 	
-	
-	
+
+
   @Override
 	public String toString() {
 		return "Apartment [buildId=" + buildId + ", price=" + price + ", photo=" + photo + ", aId=" + aId
@@ -212,9 +217,68 @@ public static  int sizeOfApartments() {
 		}
 		return null;
 	}
+	
+	public static boolean ChangeApartmentPhoto(String apid,String photo)
+	{
+		Apartment p =new Apartment("1","1","ff",2,2,0);
+			p= Apartment.findmyapartment(apid);
+			 p.setPhoto(photo);
+			 return true;
 
-	
-	
+
+
+	}
+
+
+
+
+	public static boolean ChangeApartmentPrice(String apID, int price2) {
+		// TODO Auto-generated method stub
+		Apartment p =new Apartment("1","1","ff",2,2,0);
+
+			p= Apartment.findmyapartment(apID);
+			 p.setPrice(price2);
+			 return true;
+
+	}
+
+
+
+
+	public static boolean ChangeApartmentMax(String apID, int max2) {
+		// TODO Auto-generated method stub
+
+		Apartment p =new Apartment("1","1","ff",2,2,0);
+
+		p= Apartment.findmyapartment(apID);
+		 p.setMax(max2);
+		 return true;
+	}
+
+
+
+
+	public static boolean ChangeApartmentStudentType(String apID, boolean studentType2) {
+		// TODO Auto-generated method stub
+      Apartment p =new Apartment("1","1","ff",2,2,0);
+
+		p= Apartment.findmyapartment(apID);
+		 p.setStudentType(studentType2);
+		 return true;
+
+	}
+
+	public static boolean Printservices(String apID) {
+		// TODO Auto-generated method stub
+
+		Apartment p =new Apartment("1","1","ff",2,2,0);
+
+		p= Apartment.findmyapartment(apID);
+		p.setInformation(apID);
+		 return true;
+	}
+
+
 	
 	
 

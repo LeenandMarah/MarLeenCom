@@ -1,13 +1,14 @@
 package Codes;
 
+import DB.Apartmentinfo;
+import DB.UserInfo;
+
 public class User {
 	private String username;
 	private String password;
 	private String pId;
 	private String type;
 	private String phoneNum;
-	
-	
 	
 	public String getUsername() {
 		return username;
@@ -40,13 +41,14 @@ public class User {
 		this.password = password;
 		this.pId = pId;
 		this.type = type;
+		
 		this.phoneNum=phoneNum;
 	}
 	
 	public User() {
-		
+
 	}
-	
+
 	public String getPhoneNum() {
 		return phoneNum;
 	}
@@ -56,11 +58,28 @@ public class User {
 	
 		
 	
-	
-	
-	
-	
-	
+	public static boolean ChangeOwnerPhoneNumber(String id, String phone2) {
+		// TODO Auto-generated method stub
+		User u =new User();
+
+			u= User.findMyUser(id);
+			u.setPhoneNum(phone2);
+			 return true;
+
+	}
+	private static User findMyUser(String id) {
+		// TODO Auto-generated method stub
+		for (User a: UserInfo.users)
+		{
+			if(a.getpId().equals(id)) {
+				 return a;
+
+			}
+
+		}
+		return null;
+	}
+
 	
 	
 	
