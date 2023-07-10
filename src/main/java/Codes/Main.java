@@ -1,51 +1,6 @@
 package Codes;
 
 import java.util.Scanner;
-<<<<<<< HEAD
-import java.util.logging.*;
-import java.util.logging.Logger;
-
-import jdk.jfr.internal.*;
-import Codes.MyData;
-
-public class Main {
-	static Scanner input = new Scanner(System.in);
-
-	private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
-
-	public static void main(String[] args) {
-		  MyData d=new MyData();
-		  String command;
-		  
-		LOGGER.info("-> -> -> -> -> -> -> -> -> ->Sakan Marlee <- <- <- <- <- <- <- <- <- <-");
-		
-		
-		
-		
-		while(true) {
-		LOGGER.info("Enter username:");
-		String username=input.nextLine();
-		LOGGER.info("Enter password:");
-		String password=input.nextLine();
-		 d.checkLogin(username,password);
-		   
-	       if(!d.adminIsLogged&&!d.ownerIsLogged&&!d.tenantIsLogged) {
-	    	   d.showError();
-	    	  
-	       }
-		
-	       if(d.adminIsLogged){
-	    	   LOGGER.info("-> -> -> -> -> -> -> -> -> -> Welcome Admin "+username+"  <- <- <- <- <- <- <- <- <- <-");
-	    	    
-	    	   while(d.adminIsLogged) {
-	    		 command=input.nextLine(); 
-	    		 if(command.equals("LogOut")){
-	    			 d.logOut("Admin");
-	    			 LOGGER.info("Bye Admin");
-	    			
-	    			 break;
-	    		 }
-=======
 
 import java.util.logging.*;
 import java.util.logging.Logger;
@@ -53,7 +8,7 @@ import java.util.logging.Logger;
 import jdk.jfr.internal.*;
 import Codes.MyData;
 import DB.BuldingInfo;
-import DB.apartmentinfo;
+import DB.Apartmentinfo;
 
 public class Main {
 	static Scanner input = new Scanner(System.in);
@@ -63,6 +18,7 @@ public class Main {
 	public static void main(String[] args) {
 		  MyData d=new MyData();
 		  Apartment p;
+		  Apartmentinfo f=new Apartmentinfo();
 		  String command;
 		  String buldingid;
 		  String apID;
@@ -149,8 +105,8 @@ public class Main {
 			    		 max=input.nextInt();
 			    		 LOGGER.info("enter price");
 			    		 price=input.nextInt();
-			    		// p.addApartment(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price)	;		
-			    		num=apartmentinfo.apartments.size();
+			    		
+			    		num=Apartmentinfo.apartments.size();
 			    		 LOGGER.info(Integer.toString(num)+"hiiiiiii");
 			    		 break;
 			    		 
@@ -165,10 +121,10 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(DB.apartmentinfo.IfFoundap(apID))
+	    			 if(DB.Apartmentinfo.IfFoundap(apID))
 			    		{
 	    				 Apartment ap =new Apartment();
-	    				ap= DB.apartmentinfo.findmyapartment(apID);
+	    				ap= DB.Apartmentinfo.findmyapartment(apID);
 	    				LOGGER.info("enter new photo");
 		    			 photo=input.nextLine();
 		    			 ap.setPhoto(photo);
@@ -185,7 +141,6 @@ public class Main {
 	    		 
 	    		 
 	    		 
->>>>>>> branch 'marah-test' of https://github.com/leenfhd/MarLeenCom.git
 	    	   }
 	    	   LOGGER.info("hi");
 	     // continue;
@@ -212,6 +167,7 @@ public class Main {
 		    		 if(command.equals("LogOut")){
 		    			 d.logOut("Tenant");
 		    			 LOGGER.info("Bye Tenant");
+		    			 
 		    			
 		    			 break;
 		    		 }
@@ -219,8 +175,35 @@ public class Main {
 		    		 if(command.equals("Dashboard")) {
 		    	       LOGGER.info("-> -> -> -> -> -> -> -> -> -> Tenant Dashboard  <- <- <- <- <- <- <- <- <- <-");
 		    	       LOGGER.info("                   ------------Aviable Houses---------"                            );
+		    	       LOGGER.info("\n"+"* view"+"\n"+"* show info"+"\n"+"* book");
+		    	       command = input.nextLine();
+		    	       if(command.equals("view")) {
+		    	    	   f.viewAvilableAparts();   
+		    	    	   
+		    	       }
 		    	       
+		    	       else if(command.equals("show info")) {
+		    	    	   LOGGER.info("enter the apartment ID:");
+		    	    	   command = input.nextLine();
+		    	    	   f.viewInfo(command);
+		    	    	   
+		    	       }
 		    	       
+		    	       else if(command.equals("book")) {
+			    			 LOGGER.info("enter apartment ID:");
+			    			 command = input.nextLine();
+			    			 f.book(command);
+			    		 
+			    		 }
+		    	       
+		    		 }
+		    		 
+		    		
+		    		 
+		    	
+		    		 else {
+		    			 LOGGER.info("Please enter valid command");
+		    			 break;
 		    		 }
 	    	    }
 	    	 

@@ -14,7 +14,15 @@ public class Tenants extends User {
 	private String date;
 	private String apartId;
 	
-	
+	  public Tenants(User u) {
+		  this.name="";
+		  this.major="";
+		  this.age="";
+		  this.student=false;
+		  this.date="";
+		  this.apartId="";
+		  
+	  }
 	
 	
 	public String getName() {
@@ -50,13 +58,9 @@ public class Tenants extends User {
 	public String getApartId() {
 		return apartId;
 	}
-	public void setApartId(String apartId) {
+	public void setApartId(String apartId) { 
 		this.apartId = apartId;
 	}
-	
-	
-	
-	
 	
 	
 	

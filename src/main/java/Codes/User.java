@@ -7,6 +7,8 @@ public class User {
 	private String type;
 	private String phoneNum;
 	
+	
+	
 	public String getUsername() {
 		return username;
 	}
@@ -38,8 +40,11 @@ public class User {
 		this.password = password;
 		this.pId = pId;
 		this.type = type;
-		
 		this.phoneNum=phoneNum;
+	}
+	
+	public User() {
+		
 	}
 	
 	public String getPhoneNum() {

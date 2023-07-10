@@ -1,182 +1,9 @@
 package Codes;
-<<<<<<< HEAD
-
-public class Apartment {
-	private String buildId;
-	private int price;
-	private String photo;
-	private String aId;
-	private String numPeople;
-	private String information;
-	private int bedrooms;
-	private int bathrooms;
-	private boolean balcon;
-	private int floorNum;
-	private int max;
-	private boolean full;
-	private boolean studentType;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public boolean isStudentType() {
-		return studentType;
-	}
 
 
-
-
-
-
-
-	public void setStudentType(boolean studentType) {
-		this.studentType = studentType;
-	}
-
-
-
-
-
-
-
-	public Apartment(String buildId, int price, String aId, int floorNum, int max) {
-		super();
-		this.buildId = buildId;
-		this.price = price;
-		this.aId = aId;
-		this.floorNum = floorNum;
-		this.max = max;
-
-	}
-	
-	
-	
-	
-	
-	
-	
-	public Apartment(String photo, String numPeople,  int bedrooms, int bathrooms, boolean balcon) {
-		super();
-		this.photo = photo;
-		this.numPeople = numPeople;
-		this.bedrooms = bedrooms;
-		this.bathrooms = bathrooms;
-		this.balcon = balcon;
-	}
-
-
-
-
-
-
-
-	public Apartment(String information, boolean full, boolean studentType) {
-		super();
-		this.information = information;
-		this.full = full;
-		this.studentType = studentType;
-	}
-
-
-
-
-
-
-
-	public String getBuildId() {
-		return buildId;
-	}
-	public void setBuildId(String buildId) {
-		this.buildId = buildId;
-	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	public String getPhoto() {
-		return photo;
-	}
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-	public String getaId() {
-		return aId;
-	}
-	public void setaId(String aId) {
-		this.aId = aId;
-	}
-	public String getNumPeople() {
-		return numPeople;
-	}
-	public void setNumPeople(String numPeople) {
-		this.numPeople = numPeople;
-	}
-	public String getInformation() {
-		return information;
-	}
-	public void setInformation(String information) {
-		this.information = information;
-	}
-	public int getBedrooms() {
-		return bedrooms;
-	}
-	public void setBedrooms(int bedrooms) {
-		this.bedrooms = bedrooms;
-	}
-	public int getBathrooms() {
-		return bathrooms;
-	}
-	public void setBathrooms(int bathrooms) {
-		this.bathrooms = bathrooms;
-	}
-	public boolean isBalcon() {
-		return balcon;
-	}
-	public void setBalcon(boolean balcon) {
-		this.balcon = balcon;
-	}
-	public int getFloorNum() {
-		return floorNum;
-	}
-	public void setFloorNum(int floorNum) {
-		this.floorNum = floorNum;
-	}
-	public int getMax() {
-		return max;
-	}
-	public void setMax(int max) {
-		this.max = max;
-	}
-	public boolean isFull() {
-		return full;
-	}
-	public void setFull(boolean full) {
-		this.full = full;
-	}
-	
-	
-	
-	
-	
-	
-	
-=======
 import java.util.ArrayList;
 
-import DB.apartmentinfo;
+import DB.Apartmentinfo;
 public class Apartment {
 	private String buildId;
 	private int price;
@@ -191,13 +18,6 @@ public class Apartment {
 	private int max;
 	private boolean full;
 	private boolean studentType;
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -229,21 +49,12 @@ public class Apartment {
 
 
 
-	public Apartment(String buildId, int price, String aId, int floorNum, int max) {
-		super();
-		this.buildId = buildId;
-		this.price = price;
-		this.aId = aId;
-		this.floorNum = floorNum;
-		this.max = max;
-
-	}
-	
 	public Apartment(String buildId, String aId, String photo, int bedrooms, int Bathrooms,int balcon) {
 		
 		this.buildId = buildId;
 		this.bedrooms = bedrooms;
 		this.aId = aId;
+		this.photo=photo;
 		this.bathrooms = Bathrooms;
 		this.balcon = balcon;
 		this.floorNum = 0;
@@ -264,30 +75,6 @@ public class Apartment {
 	
 	
 	
-	public Apartment(String photo, int numPeople,  int bedrooms, int bathrooms, int balcon) {
-		super();
-		this.photo = photo;
-		this.numPeople = numPeople;
-		this.bedrooms = bedrooms;
-		this.bathrooms = bathrooms;
-		this.balcon = balcon;
-	}
-
-
-
-
-
-
-
-	public Apartment(String information, boolean full, boolean studentType) {
-		super();
-		this.information = information;
-		this.full = full;
-		this.studentType = studentType;
-	}
-
-
-
 
 
 
@@ -320,7 +107,9 @@ public class Apartment {
 		return numPeople;
 	}
 	public void setNumPeople(int numPeople) {
+		
 		this.numPeople = numPeople;
+	
 	}
 	public String getInformation() {
 		return information;
@@ -379,38 +168,51 @@ public class Apartment {
 		p.setPrice(price2);
 		
 		
-		 DB.apartmentinfo.apartments.add(p);
-		return  DB.apartmentinfo.apartments.size();
+		 DB.Apartmentinfo.apartments.add(p);
+		return  DB.Apartmentinfo.apartments.size();
 		
 	}
 	
 	
 	
-  public static  int sizeOfApartments() {
-	  return  DB.apartmentinfo.apartments.size();
+	
+	
+  @Override
+	public String toString() {
+		return "Apartment [buildId=" + buildId + ", price=" + price + ", photo=" + photo + ", aId=" + aId
+				+ ", numPeople=" + numPeople + ", information=" + information + ", bedrooms=" + bedrooms
+				+ ", bathrooms=" + bathrooms + ", balcon=" + balcon + ", floorNum=" + floorNum + ", max=" + max
+				+ ", full=" + full + ", studentType=" + studentType +"\n" +"]";
+	}
+
+
+
+
+public static  int sizeOfApartments() {
+	  return  DB.Apartmentinfo.apartments.size();
   }
 	
 	
 
   public static boolean IfFoundap(String apid) {
-		for(int i=0;i<DB.apartmentinfo.apartments.size();i++)
+		for(int i=0;i<DB.Apartmentinfo.apartments.size();i++)
 		{
-			if(apartmentinfo.apartments.get(i).getaId().equals(apid))
+			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
 				return true;
 			
 		}
 		return false;
 	}
 	public static Apartment findmyapartment(String apid) {
-		for(int i=0;i<DB.apartmentinfo.apartments.size();i++)
+		for(int i=0;i<DB.Apartmentinfo.apartments.size();i++)
 		{
-			if(apartmentinfo.apartments.get(i).getaId().equals(apid))
-				return DB.apartmentinfo.apartments.get(i);
+			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
+				return DB.Apartmentinfo.apartments.get(i);
 			
 		}
 		return null;
 	}
->>>>>>> branch 'marah-test' of https://github.com/leenfhd/MarLeenCom.git
+
 	
 	
 	

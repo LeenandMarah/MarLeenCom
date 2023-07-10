@@ -14,7 +14,7 @@ public static List<Building> buildings = new ArrayList<>();
 	Building b = new Building("1","1",3,"Nablus-Rafidya",6) ;
 	Building u = new Building("2","2",3,"Nablus-Rafidya",6) ;
 	Building i = new Building("3","1",3,"Nablus-Rafidya",6) ;
-<<<<<<< HEAD
+
 		
 	buildings.add(b);
 	buildings.add(u);
@@ -23,21 +23,13 @@ public static List<Building> buildings = new ArrayList<>();
 	
 	
 	
-   
-=======
-	
-		
-	buildings.add(b);
-	buildings.add(u);
-	buildings.add(i);
-	
-	
-	
+
 	
 	
    
 	}
 	public static boolean IfFound(String buldingid) {
+		
 		for(int i=0;i<DB.BuldingInfo.buildings.size();i++)
 		{
 			if(DB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
@@ -45,6 +37,6 @@ public static List<Building> buildings = new ArrayList<>();
 			
 		}
 		return false;
->>>>>>> branch 'marah-test' of https://github.com/leenfhd/MarLeenCom.git
+
 	}
 }
