@@ -80,8 +80,18 @@ public class User {
 		return null;
 	}
 
-	
-	
+	public User findMyOwner(String id)
+	{
+		for (User a: UserInfo.users)
+		{
+			if(a.getpId().equals(id)&&a.getType().equals("Owner")) {
+				 return a;
+
+			}
+
+		}
+		return null;
+	}
 	
 	
 }

@@ -1,14 +1,19 @@
 package DB;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Logger;
 
 import Codes.*;
-
+import DB.*;
+import io.cucumber.java.it.Date;
 
 public class Apartmentinfo {
 public static List<Apartment> apartments = new ArrayList<>();
+public static List<Apartment> BuildingApartments = new ArrayList<>();
 private static final Logger LOGGER = Logger.getLogger(Apartmentinfo.class.getName());
 private static String photo=new String("https://images.search.yahoo.com/search/images;_ylt=AwrEo5D.T6hkDTULrBhXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZANMT0NVSTA1OFRfMQRzZWMDcGl2cw--?p=apartments+for+students&fr2=piv-web&type=E210US91215G0&fr=mcafee#id=68&iurl=https%3A%2F%2Fnyunews.com%2Fwp-content%2Fuploads%2F2017%2F04%2F033017_Housing_Alex-Muhawi-Ho_.jpg&action=click");
 	static {
@@ -29,7 +34,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 		 b.setPrice(200);
 	     b.setInformation("Hi test testtest");
 	     b.setStudentType(true);
-	     b.setNumPeople(5);
+	     b.setNumPeople(1);
 
 	     Apartment c =new Apartment ("3","3","photo3",3,2,0);
 	     c.setFloorNum(1);
@@ -37,7 +42,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 		 c.setPrice(200);
 	     c.setFull(false);
 	     c.setInformation("Hi test testtest");
-	     c.setStudentType(true);
+	     c.setStudentType(false);
 	     c.setNumPeople(2);
 
 		 apartments.add(a);
@@ -72,7 +77,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 		return null;
 	}
 	
-	public static void viewAvilableAparts() {
+	public static boolean viewAvilableAparts() {
 
 		for(int i=0;i<apartments.size();i++) {
 			if(apartments.get(i).isFull()==false) {
@@ -80,20 +85,20 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 			}
 		}
 
-
+      return true;
 }
 
-	public  boolean isFull(String id) {
-
+	public static boolean isFull(String id) {
+       
 		for(Apartment a:Apartmentinfo.apartments) {
-
-			System.out.println(a.getNumPeople());
+			
 			if(a.getaId().equals(id)&&(a.getMax()==a.getNumPeople())) {
+				
+				
+				
 				return true;
 			}
-
-
-
+		
 		}
 
 
@@ -106,18 +111,25 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 	}
 
 
-	public static void viewInfo(String x) {
+	public static boolean viewInfo(String x) {
 		for(int i=0;i<apartments.size();i++) {
 			if(apartments.get(i).getaId().equals(x)) {
 				Building b = Codes.Building.FindBuilding(x);
+				
 				LOGGER.info("\n"+"Price:"+apartments.get(i).getPrice()+"\n"+"Location:"+b.getLocation()+"\n"+"Services:"+apartments.get(i).getInformation()+"\n"+"Photo -> Go to link;"+apartments.get(i).getPhoto());
+				return true;
 			}
 		}
-
+       return false;
 	}
-	public  int book(String command) {
+	
+	public static  int book(String command,Tenants t) {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+		   LocalDateTime now = LocalDateTime.now();  
+		
 		if(isFull(command)) {
-			LOGGER.info("Sorry, it's full!");
+		
+		    LOGGER.info("Sorry, it's full!");
 				return 0;
 			}
 
@@ -127,31 +139,67 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 			if(apartments.get(i).getaId().equals(command)) {
 				int num=apartments.get(i).getNumPeople();
 				num++;
-
+				  t.setApartId(command);
+				  t.setDate(now.toString());
 				apartments.get(i).setNumPeople(num);
 				LOGGER.info("Done,Congrats!");
-				System.out.println(apartments.get(i).getNumPeople());
+				
+				
 				if(apartments.get(i).getMax()==apartments.get(i).getNumPeople())
 					{apartments.get(i).setFull(true);}
+				
+				
+				return 1;
 			}
 		}
 	}
 
-	return 1;
+	 
+	return 0;
 	}
 
 
 
 
-	public int myNighbours(String id) {
-		for(int i=0;i<apartments.size();i++) {
-			if(apartments.get(i).getaId().equals(id)&&apartments.get(i).isStudentType()) {
-			     int f=apartments.get(i).getFloorNum();
-
-			}
-		}
-
-		return 1;
+	public static int myNighbours(String id) {
+		
+		  for(Apartment a:apartments) {
+			  if(a.isStudentType()) {
+			 
+				  if(a.getaId().equals(id)) {
+					  for(Tenants t:DB.UserInfo.tenants ) {
+						  if(t.getApartId().equals(id)) {
+								LOGGER.info("------->  Your Room mates are:");
+								LOGGER.info("Name:"+t.getName()+","+"Age:"+t.getAge()+","+"Major:"+t.getMajor()+"\n");
+						  }
+					  }
+					  
+					  return 1;
+				  }
+				  
+				  else {
+					  LOGGER.info("Invalid id");
+				  }
+				  
+				  
+				  
+				  
+			  }
+			  
+			  else {
+				  LOGGER.info("Sorry This feature is for Student type apartment only");
+				  return 0;
+			  }
+			  
+	
+			  
+		  }
+		
+		
+		
+	
+		  
+		  return 0;
 	}
 
 
@@ -175,6 +223,26 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 
 		}
 
+	}
+	public static int showBill(Tenants ten, String nc) {
+		
+		  Building b= new Building();
+		  Building k=null;
+		  
+		  for(Apartment i:apartments) {
+			  if(i.getaId().equals(nc)){
+				  k=b.FindBuilding(nc);
+			  }
+		  }
+        
+		  User r;
+		  User s =new User();
+		  r=s.findMyOwner(k.getOwnerId());
+		  
+          
+		LOGGER.info("-------------------------------------------"+"\n"+"Tenant:"+ten.toString()+"Owner:"+r.toString());
+		
+		return 1;
 	}
 
 }

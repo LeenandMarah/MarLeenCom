@@ -12,7 +12,7 @@ public class UserInfo {
 	}
 	
 	public static List<User> users = new ArrayList<>();
-	public static List<User> tenants = new ArrayList<>();
+	public static List<Tenants> tenants = new ArrayList<>();
 	
 	
 	static {
@@ -25,14 +25,30 @@ public class UserInfo {
     
     
     User e =new User("fuad","123f","3","Tenant","12345677");
-    Tenants ee= new Tenants(e);
-    tenants.add(ee);
+
+   
 	
-	
-	
+    User t =new User("toto","123f","4","Tenant","12345677");
+    Tenants tt=new Tenants("fuad","123f","3","Tenant","12345677");
+    tt.setAge("19");
+    tt.setMajor("CE");
+    tt.setName("fuad fuad");
+    tt.setApartId("");
+    Tenants ttt=new Tenants ("toto","123f","4","Tenant","12345677");
+     
+    ttt.setAge("20");
+    ttt.setMajor("CEE");
+    ttt.setName("Tala");
+    ttt.setApartId("2");
+   
+ 		   
+   tenants.add(tt);
+   tenants.add(ttt);
+   
     users.add(u);
     users.add(s);
     users.add(e);
+    users.add(t);
 	}
 		
 

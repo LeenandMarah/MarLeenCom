@@ -36,9 +36,11 @@ public class Main {
 		  String location;
 		  int num;
 		  int i;
+		  int r;
 		  boolean studentType;
+		  String nc;
 
-
+ 
 
 		LOGGER.info("-> -> -> -> -> -> -> -> -> ->Sakan Marlee <- <- <- <- <- <- <- <- <- <-");
 		
@@ -50,7 +52,10 @@ public class Main {
 		String username=input.nextLine();
 		LOGGER.info("Enter password:");
 		String password=input.nextLine();
-		 d.checkLogin(username,password);
+		User u =new User();
+		u.setUsername(username);
+		u.setPassword(password);
+		 u= d.checkLogin(u.getUsername(),u.getPassword());
 		   
 	       if(!d.adminIsLogged&&!d.ownerIsLogged&&!d.tenantIsLogged) {
 	    	   d.showError();
@@ -219,7 +224,6 @@ public class Main {
 	    		 
 	    		 
 	    	   }
-	    	   LOGGER.info("hi");
 	     // continue;
 	       }
 	       
@@ -298,8 +302,16 @@ public class Main {
 	       }
        
 	       if(d.tenantIsLogged){
+	    	   Tenants ten=new Tenants();
+	    	   for(Tenants t : DB.UserInfo.tenants) {
+	    		   if (t.getUsername().equals(username)) {
+	    			   ten=t;
+	    			   
+	    		   }
+	    	   }
 	    	   LOGGER.info("-> -> -> -> -> -> -> -> -> -> Welcome Tenant "+username+"  <- <- <- <- <- <- <- <- <- <-");
 	    	    while(d.tenantIsLogged) {
+	    	    	LOGGER.info("* Dashboard"+"* LogOut");
 		    		 command=input.nextLine(); 
 		    		 if(command.equals("LogOut")){
 		    			 d.logOut("Tenant");
@@ -309,13 +321,15 @@ public class Main {
 		    		 }
 		    		 
 		    		 if(command.equals("Dashboard")) {
+		    			
 		    	       LOGGER.info("-> -> -> -> -> -> -> -> -> -> Tenant Dashboard  <- <- <- <- <- <- <- <- <- <-");
 		    	       LOGGER.info("                   ------------Aviable Houses---------"                            );
 		    	       LOGGER.info("\n"+"* view"+"\n"+"* show info"+"\n"+"* book");
 		    	       command = input.nextLine();
 		    	       if(command.equals("view")) {
 		    	    	   f.viewAvilableAparts();
-
+                            
+		    	    	   
 		    	       }
 
 		    	       else if(command.equals("show info")) {
@@ -328,8 +342,35 @@ public class Main {
 		    	       else if(command.equals("book")) {
 			    			 LOGGER.info("enter apartment ID:");
 			    			 command = input.nextLine();
-			    			 f.book(command);
-
+			    			  
+			    			 r = f.book(command,ten);
+			    			 
+			    			    
+			    			 nc=command;
+			    			 
+			    			 if(r==1) {
+			    			 LOGGER.info("Do you want to see who are your room mates? (y/n)");
+			    			 command = input.nextLine();
+			    			 if(command.equals("y")) {
+			    			    	f.myNighbours(nc);
+			    			    	
+			    			    	f.showBill(ten,nc);
+			    			    }
+			    			  
+			    			 else {
+			    				 f.showBill(ten,nc);
+			    			 }
+			    			
+			    			 
+			    			 }
+			    			 
+			    			 
+			    			 
+			    			 else {
+			    				 LOGGER.info("Faild");
+			    				
+			    			 }
+			    			    
 			    		 }
 
 		    		 }

@@ -25,6 +25,8 @@ public class MyData {
 		
 		
 	}
+	String userName;
+	String Password;
 	
 	String buldingid;
 	

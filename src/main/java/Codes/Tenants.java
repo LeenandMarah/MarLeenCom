@@ -2,9 +2,11 @@ package Codes;
 
 public class Tenants extends User {
 
-	public Tenants(String username, String password, String pId, String type, int logged, String phoneNum) {
+	public Tenants(String username, String password, String pId, String type, String phoneNum) {
 		super(username, password, pId, type, phoneNum);
 		   this.setType("Tenant");
+		   
+		   
 	}
 	
 	private String name;
@@ -14,15 +16,15 @@ public class Tenants extends User {
 	private String date;
 	private String apartId;
 	
-	  public Tenants(User u) {
-		  this.name="";
+	
+	public Tenants() {
+		 this.name="";
 		  this.major="";
 		  this.age="";
 		  this.student=false;
 		  this.date="";
 		  this.apartId="";
-		  
-	  }
+	}
 	
 	
 	public String getName() {
@@ -60,6 +62,13 @@ public class Tenants extends User {
 	}
 	public void setApartId(String apartId) { 
 		this.apartId = apartId;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Tenants [name=" + name + ", major=" + major + ", age=" + age + ", student=" + student + ", date=" + date
+				+ ", apartId=" + apartId + "]";
 	}
 	
 	
