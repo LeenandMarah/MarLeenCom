@@ -26,16 +26,16 @@ public class MyData {
 		
 	}
 	
-	String buldingid;
+	public String buldingid;
 	
-	String apID;
-	String photo;
-	int numofbeds;
-	int numofbath;
-	int balcon;
-	int floor;
-	int max;
-	int price;
+	public String apID;
+	public String photo;
+	public int numofbeds;
+	public int numofbath;
+	public int balcon;
+	public int floor;
+	public int max;
+	public int price;
 	
 	
 	
