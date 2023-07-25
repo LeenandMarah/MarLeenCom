@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import jdk.jfr.internal.*;
 import Codes.MyData;
 import DB.BuldingInfo;
+import DB.FurnetureInfo;
 import DB.Apartmentinfo;
 
 public class Main {
@@ -39,7 +40,7 @@ public class Main {
 		  int r;
 		  boolean studentType;
 		  String nc;
-
+           FurnetureInfo fur=new FurnetureInfo();
  
 
 		LOGGER.info("-> -> -> -> -> -> -> -> -> ->Sakan Marlee <- <- <- <- <- <- <- <- <- <-");
@@ -324,7 +325,7 @@ public class Main {
 		    			
 		    	       LOGGER.info("-> -> -> -> -> -> -> -> -> -> Tenant Dashboard  <- <- <- <- <- <- <- <- <- <-");
 		    	       LOGGER.info("                   ------------Aviable Houses---------"                            );
-		    	       LOGGER.info("\n"+"* view"+"\n"+"* show info"+"\n"+"* book");
+		    	       LOGGER.info("\n"+"* view"+"\n"+"* show info"+"\n"+"* book"+"Furneture");
 		    	       command = input.nextLine();
 		    	       if(command.equals("view")) {
 		    	    	   f.viewAvilableAparts();
@@ -372,13 +373,35 @@ public class Main {
 			    			 }
 			    			    
 			    		 }
+		    	       
+		    	       else if(command.equals("Furneture")) {
+		    	    	    
+		    	    	   LOGGER.info("* Add"+"\n"+"* See");
+		    	    	   command=input.nextLine();
+		    	    	   if(command.equals("Add")) {
+		    	    		   LOGGER.info("Enter a link of photo");
+		    	    		   String photo2 =input.nextLine();
+		    	    		   LOGGER.info("Enter a price");
+		    	    		   int pric=input.nextInt();
+		    	    		   
+		    	    		  fur.addItem(ten.getpId(),photo2,pric);
+		    	    		  
+		    	    		  LOGGER.info("added");
+		    	    		  
+		    	    		   
+		    	    	   }
+		    	    	   
+		    	    	   
+		    	    	   else if (command.equals("See")){
+		    	    		         fur.show();
+		    	    		   
+		    	    		   
+		    	    	   }
+		    	       }
 
 		    		 }
 
-
-
-
-		    		 else {
+	    		 else {
 		    			 LOGGER.info("Please enter valid command");
 		    			 break;
 		    		 }

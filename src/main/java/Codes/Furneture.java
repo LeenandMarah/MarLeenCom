@@ -1,19 +1,38 @@
 package Codes;
 
 public class Furneture {
-	
+	private int id;
 	private String personId;
 	private String pic;
 	private int price;
 	private boolean taken;
 	
 	
+	
+	public Furneture() {
+		
+	}
+	
 
-	public Furneture(String personId, String pic, int price, boolean taken) {
+	@Override
+	public String toString() {
+		return "Furneture [id=" + id + ", personId=" + personId + ", pic=" + pic + ", price=" + price + ", taken="
+				+ taken + "]";
+	}
+
+
+	public Furneture(int id,String personId, String pic, int price, boolean taken) {
+		this.id=id;
 		this.personId = personId;
 		this.pic = pic;
 		this.price = price;
 		this.taken = taken;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getPersonId() {
 		return personId;

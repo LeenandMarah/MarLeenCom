@@ -36,6 +36,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 	     b.setStudentType(true);
 	     b.setNumPeople(1);
 
+	     
 	     Apartment c =new Apartment ("3","3","photo3",3,2,0);
 	     c.setFloorNum(1);
 		 c.setMax(3);
