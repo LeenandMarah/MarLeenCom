@@ -27,6 +27,7 @@ public class FurnetureInfo {
 	
 	public static int addItem(String id,String photo,int price) {
 		int x= furnetures.size();
+		/////
 		Furneture f=new Furneture();
 		f.setId((furnetures.get(x-1).getId())+1);
 		f.setPersonId(id);
