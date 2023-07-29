@@ -1,7 +1,7 @@
 package Accept;
 import static org.junit.Assert.assertTrue;
 
-import Codes.MyData;
+import codes.MyData;
 import io.cucumber.java.en.*;
 
 public class LogOutCode {

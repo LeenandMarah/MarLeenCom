@@ -2,8 +2,8 @@ package Accept;
 
 import static org.junit.Assert.assertTrue;
 
-import Codes.Apartment;
-import Codes.User;
+import codes.Apartment;
+import codes.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
@@ -22,7 +22,7 @@ public class OwnerPossibility {
 
 	@Then("added succesfully")
 	public void addedSuccesfully() {
-		 result = Apartment.ChangeApartmentPhoto("1","new photo");
+		 result = Apartment.changeApartmentPhoto("1","new photo");
 		assertTrue(result==true);
 	}
 	
@@ -43,7 +43,7 @@ public class OwnerPossibility {
 
 	@Then("price is changed succesfully")
 	public void priceIsChangedSuccesfully() {
-		 result =Apartment.ChangeApartmentPrice("1",100);
+		 result =Apartment.changeApartmentPrice("1",100);
 			assertTrue(result==true);
 	}
 

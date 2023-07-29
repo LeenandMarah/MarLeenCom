@@ -1,4 +1,4 @@
-package Codes;
+package codes;
 
 import DB.Apartmentinfo;
 import DB.UserInfo;

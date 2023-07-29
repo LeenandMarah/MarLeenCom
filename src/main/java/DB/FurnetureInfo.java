@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import Codes.Furneture;
-import Codes.User;
+import codes.Furneture;
+import codes.User;
 
 public class FurnetureInfo {
 	private static final Logger LOGGER = Logger.getLogger(FurnetureInfo.class.getName());

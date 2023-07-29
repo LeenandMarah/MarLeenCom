@@ -2,13 +2,14 @@ package DB;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
+
+import codes.Building;
+import codes.MyData;
+import codes.User;
+
 import java.util.Scanner;
 
 import java.util.List;
-
-import Codes.Building;
-import Codes.MyData;
-import Codes.User;
 
 public class BuldingInfo {
 public static List<Building> buildings = new ArrayList<>();

@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 
 import static org.junit.Assert.assertTrue;
 
-import Codes.*;
+import codes.*;
 public class ApatmentforAdmin {
 	   
 	public  ApatmentforAdmin() {
@@ -34,7 +34,6 @@ public class ApatmentforAdmin {
 
 	@Then("add succesfully")
 	public void addSuccesfully() {
-	    // Write code here that turns the phrase above into concrete actions
 		oldsize=Apartment.sizeOfApartments();
 		newsize=Apartment.addApartment("1", "1", "phohpo",2, 3, 1,2,4,200);
 		assertTrue((oldsize+1)==(newsize));
@@ -58,7 +57,7 @@ public class ApatmentforAdmin {
 
 	@Then("changed succesfully")
 	public void changedSuccesfully() {
-		 result =Apartment.ChangeApartmentPhoto("1","new photo");
+		 result =Apartment.changeApartmentPhoto("1","new photo");
 		assertTrue(result==true);
 	   
 	}
@@ -69,7 +68,7 @@ public class ApatmentforAdmin {
 
 	@Then("price changed succesfully")
 	public void priceChangedSuccesfully() {
-		 result =Apartment.ChangeApartmentPrice("1",100);
+		 result =Apartment.changeApartmentPrice("1",100);
 			assertTrue(result==true);
 		
 	}
@@ -82,7 +81,7 @@ public class ApatmentforAdmin {
 	@Then("max changed succesfully")
 	public void maxChangedSuccesfully() {
 		
-		result =Apartment.ChangeApartmentMax("1",3);
+		result =Apartment.changeApartmentMax("1",3);
 		assertTrue(result==true);
 	   
 	}

@@ -3,7 +3,7 @@ package DB;
 import java.util.ArrayList;
 import java.util.List;
 
-import Codes.*;
+import codes.*;
 
 public class UserInfo {
 	

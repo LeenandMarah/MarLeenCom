@@ -1,4 +1,4 @@
-package Codes;
+package codes;
 
 public class Tenants extends User {
 

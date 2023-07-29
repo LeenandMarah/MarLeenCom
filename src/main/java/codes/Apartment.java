@@ -1,7 +1,6 @@
-package Codes;
+package codes;
 
 
-import java.util.ArrayList;
 
 import DB.Apartmentinfo;
 public class Apartment {
@@ -56,13 +55,13 @@ public class Apartment {
 
 
 
-	public Apartment(String buildId, String aId, String photo, int bedrooms, int Bathrooms,int balcon) {
+	public Apartment(String buildId, String aId, String photo, int bedrooms, int bathrooms,int balcon) {
 		
 		this.buildId = buildId;
 		this.bedrooms = bedrooms;
 		this.aId = aId;
 		this.photo=photo;
-		this.bathrooms = Bathrooms;
+		this.bathrooms = bathrooms;
 		this.balcon = balcon;
 		this.floorNum = 0;
 		this.max = 0;
@@ -199,7 +198,7 @@ public static  int sizeOfApartments() {
 	
 	
 
-  public static boolean IfFoundap(String apid) {
+  public static boolean ifFoundap(String apid) {
 		for(int i=0;i<DB.Apartmentinfo.apartments.size();i++)
 		{
 			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
@@ -218,7 +217,7 @@ public static  int sizeOfApartments() {
 		return null;
 	}
 	
-	public static boolean ChangeApartmentPhoto(String apid,String photo)
+	public static boolean changeApartmentPhoto(String apid,String photo)
 	{
 		Apartment p =new Apartment("1","1","ff",2,2,0);
 			p= Apartment.findmyapartment(apid);
@@ -232,10 +231,8 @@ public static  int sizeOfApartments() {
 
 
 
-	public static boolean ChangeApartmentPrice(String apID, int price2) {
-		// TODO Auto-generated method stub
+	public static boolean changeApartmentPrice(String apID, int price2) {
 		Apartment p =new Apartment("1","1","ff",2,2,0);
-
 			p= Apartment.findmyapartment(apID);
 			 p.setPrice(price2);
 			 return true;
@@ -245,11 +242,8 @@ public static  int sizeOfApartments() {
 
 
 
-	public static boolean ChangeApartmentMax(String apID, int max2) {
-		// TODO Auto-generated method stub
-
+	public static boolean changeApartmentMax(String apID, int max2) {
 		Apartment p =new Apartment("1","1","ff",2,2,0);
-
 		p= Apartment.findmyapartment(apID);
 		 p.setMax(max2);
 		 return true;
@@ -259,7 +253,6 @@ public static  int sizeOfApartments() {
 
 
 	public static boolean ChangeApartmentStudentType(String apID, boolean studentType2) {
-		// TODO Auto-generated method stub
       Apartment p =new Apartment("1","1","ff",2,2,0);
 
 		p= Apartment.findmyapartment(apID);
@@ -268,11 +261,8 @@ public static  int sizeOfApartments() {
 
 	}
 
-	public static boolean Printservices(String apID) {
-		// TODO Auto-generated method stub
-
+	public static boolean printservices(String apID) {
 		Apartment p =new Apartment("1","1","ff",2,2,0);
-
 		p= Apartment.findmyapartment(apID);
 		p.setInformation(apID);
 		 return true;

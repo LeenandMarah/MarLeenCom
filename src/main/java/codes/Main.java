@@ -1,4 +1,4 @@
-package Codes;
+package codes;
 
 import java.util.Scanner;
 
@@ -6,9 +6,9 @@ import java.util.logging.*;
 import java.util.logging.Logger;
 
 import jdk.jfr.internal.*;
-import Codes.MyData;
 import DB.BuldingInfo;
 import DB.FurnetureInfo;
+import codes.MyData;
 import DB.Apartmentinfo;
 
 public class Main {
@@ -157,7 +157,7 @@ public class Main {
 	    				ap= DB.Apartmentinfo.findmyapartment(apID);
 	    				LOGGER.info("enter new photo");
 		    			 photo=input.nextLine();
-		    			Apartment.ChangeApartmentPhoto(apID, photo);
+		    			Apartment.changeApartmentPhoto(apID, photo);
 
 			    		}
 	    			 else
@@ -175,7 +175,7 @@ public class Main {
 
 	    				LOGGER.info("enter new price");
 		    			 price=input.nextInt();
-		    			Apartment.ChangeApartmentPrice(apID, price);
+		    			Apartment.changeApartmentPrice(apID, price);
 
 			    		}
 	    			 else
@@ -193,7 +193,7 @@ public class Main {
 
 	    				LOGGER.info("enter new max");
 		    			max=input.nextInt();
-		    			Apartment.ChangeApartmentMax(apID, max);
+		    			Apartment.changeApartmentMax(apID, max);
 
 			    		}
 	    			 else

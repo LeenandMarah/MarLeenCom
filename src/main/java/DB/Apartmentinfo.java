@@ -7,8 +7,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Logger;
 
-import Codes.*;
 import DB.*;
+import codes.*;
 import io.cucumber.java.it.Date;
 
 public class Apartmentinfo {
@@ -115,7 +115,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 	public static boolean viewInfo(String x) {
 		for(int i=0;i<apartments.size();i++) {
 			if(apartments.get(i).getaId().equals(x)) {
-				Building b = Codes.Building.FindBuilding(x);
+				Building b = codes.Building.FindBuilding(x);
 				
 				LOGGER.info("\n"+"Price:"+apartments.get(i).getPrice()+"\n"+"Location:"+b.getLocation()+"\n"+"Services:"+apartments.get(i).getInformation()+"\n"+"Photo -> Go to link;"+apartments.get(i).getPhoto());
 				return true;
