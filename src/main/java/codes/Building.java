@@ -48,7 +48,7 @@ public class Building {
 	}
 	
 	
-	public static boolean IfFound(String buldingid) {
+	public static boolean ifFound(String buldingid) {
 		for(int i=0;i<dB.BuldingInfo.buildings.size();i++)
 		{
 			if(dB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
@@ -58,7 +58,7 @@ public class Building {
 		return false;
 	}
 
-	public static Building FindBuilding(String buldingid) {
+	public static Building findBuilding(String buldingid) {
 		for(int i=0;i<dB.BuldingInfo.buildings.size();i++)
 		{
 			if(dB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
@@ -71,7 +71,7 @@ public class Building {
 	public static void buildingfloor(String buldingid) {
 		Building b=new Building();
 
-		b=FindBuilding(buldingid);
+		b=findBuilding(buldingid);
 		floor=b.getFloors();
 		for(int i=floor; i>0;i--)
 		{

@@ -96,7 +96,7 @@ public class ApatmentforAdmin {
 	public void studentTypeChangedSuccesfully() {
 		
 
-		result =Apartment.ChangeApartmentStudentType("1",true);
+		result =Apartment.changeApartmentStudentType("1",true);
 		assertTrue(result==true);
 	    
 	}

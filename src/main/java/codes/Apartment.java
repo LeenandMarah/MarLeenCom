@@ -252,7 +252,7 @@ public static  int sizeOfApartments() {
 
 
 
-	public static boolean ChangeApartmentStudentType(String apID, boolean studentType2) {
+	public static boolean changeApartmentStudentType(String apID, boolean studentType2) {
       Apartment p =new Apartment("1","1","ff",2,2,0);
 
 		p= Apartment.findmyapartment(apID);

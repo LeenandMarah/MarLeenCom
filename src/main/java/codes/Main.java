@@ -147,7 +147,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(dB.Apartmentinfo.IfFoundap(apID))
+	    			 if(dB.Apartmentinfo.ifFoundap(apID))
 			    		{
 	    				 Apartment ap =new Apartment();
 	    				ap= dB.Apartmentinfo.findmyapartment(apID);
@@ -166,7 +166,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(dB.Apartmentinfo.IfFoundap(apID))
+	    			 if(dB.Apartmentinfo.ifFoundap(apID))
 			    		{
 
 	    				LOGGER.info("enter new price");
@@ -184,7 +184,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(dB.Apartmentinfo.IfFoundap(apID))
+	    			 if(dB.Apartmentinfo.ifFoundap(apID))
 			    		{
 
 	    				LOGGER.info("enter new max");
@@ -202,12 +202,12 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(dB.Apartmentinfo.IfFoundap(apID))
+	    			 if(dB.Apartmentinfo.ifFoundap(apID))
 			    		{
 
 	    				LOGGER.info("enter student Type");
 	    	             studentType=input.nextBoolean();
-		    			Apartment.ChangeApartmentStudentType(apID,studentType);
+		    			Apartment.changeApartmentStudentType(apID,studentType);
 	    				
 			    		}
 	    			 else
@@ -254,7 +254,7 @@ public class Main {
 		    			 Building.buildingfloor(buldingid);
 		    			 LOGGER.info("choose the Floor you want");
 		    			 floor= input.nextInt();
-		    			 Apartmentinfo.BuldingApartments(buldingid,floor);
+		    			 Apartmentinfo.buldingApartments(buldingid,floor);
 		    			 for (Apartment a: Apartmentinfo.BuildingApartments )
 		    			 {
 

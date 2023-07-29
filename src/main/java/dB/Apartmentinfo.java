@@ -55,7 +55,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 	
    
 	}
-	public static boolean IfFoundap(String apid) {
+	public static boolean ifFoundap(String apid) {
 		for(int i=0;i<dB.Apartmentinfo.apartments.size();i++)
 		{
 			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
@@ -111,7 +111,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 	public static boolean viewInfo(String x) {
 		for(int i=0;i<apartments.size();i++) {
 			if(apartments.get(i).getaId().equals(x)) {
-				Building b = codes.Building.FindBuilding(x);
+				Building b = codes.Building.findBuilding(x);
 				
 				LOGGER.info("\n"+"Price:"+apartments.get(i).getPrice()+"\n"+"Location:"+b.getLocation()+"\n"+"Services:"+apartments.get(i).getInformation()+"\n"+"Photo -> Go to link;"+apartments.get(i).getPhoto());
 				return true;
@@ -210,7 +210,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 
 
 
-	public static void BuldingApartments(String bid,int floor) {
+	public static void buldingApartments(String bid,int floor) {
 		for (Apartment a: Apartmentinfo.apartments)
 		{
 			if(a.getBuildId().equals(bid)&& (a.getFloorNum()==floor)) {
@@ -228,7 +228,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 		  
 		  for(Apartment i:apartments) {
 			  if(i.getaId().equals(nc)){
-				  k=b.FindBuilding(nc);
+				  k=b.findBuilding(nc);
 			  }
 		  }
         
