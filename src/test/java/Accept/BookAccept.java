@@ -19,12 +19,12 @@ public class BookAccept {
 	@Then("booked done")
 	public void bookedDone() {
 		
-	    assertTrue(dB.Apartmentinfo.book("2",dB.UserInfo.tenants.get(0))==1 );
+	    assertTrue(db.Apartmentinfo.book("2",db.UserInfo.tenants.get(0))==1 );
 	}
 	
 	@Then("bill is showed")
 	public void billIsShowed() {
-	    assertTrue(dB.Apartmentinfo.showBill(dB.UserInfo.tenants.get(0),"2")==1);
+	    assertTrue(db.Apartmentinfo.showBill(db.UserInfo.tenants.get(0),"2")==1);
 	}
 	
 	@Given("apartment id is1 {string}")
@@ -35,7 +35,7 @@ public class BookAccept {
 
 	@Then("booked falied")
 	public void bookedFalied() {
-		 assertTrue(dB.Apartmentinfo.book("1",dB.UserInfo.tenants.get(0))==0 );
+		 assertTrue(db.Apartmentinfo.book("1",db.UserInfo.tenants.get(0))==0 );
 	    
 	}
 }

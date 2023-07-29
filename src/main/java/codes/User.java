@@ -1,6 +1,6 @@
 package codes;
 
-import dB.UserInfo;
+import db.UserInfo;
 
 public class User {
 	private String username;

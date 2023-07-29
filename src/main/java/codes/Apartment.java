@@ -2,7 +2,7 @@ package codes;
 
 
 
-import dB.Apartmentinfo;
+import db.Apartmentinfo;
 public class Apartment {
 	private String buildId;
 	private int price;
@@ -172,8 +172,8 @@ public class Apartment {
 		p.setPrice(price2);
 		
 		
-		 dB.Apartmentinfo.apartments.add(p);
-		return  dB.Apartmentinfo.apartments.size();
+		 db.Apartmentinfo.apartments.add(p);
+		return  db.Apartmentinfo.apartments.size();
 		
 	}
 	
@@ -193,13 +193,13 @@ public class Apartment {
 
 
 public static  int sizeOfApartments() {
-	  return  dB.Apartmentinfo.apartments.size();
+	  return  db.Apartmentinfo.apartments.size();
   }
 	
 	
 
   public static boolean ifFoundap(String apid) {
-		for(int i=0;i<dB.Apartmentinfo.apartments.size();i++)
+		for(int i=0;i<db.Apartmentinfo.apartments.size();i++)
 		{
 			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
 				return true;
@@ -208,10 +208,10 @@ public static  int sizeOfApartments() {
 		return false;
 	}
 	public static Apartment findmyapartment(String apid) {
-		for(int i=0;i<dB.Apartmentinfo.apartments.size();i++)
+		for(int i=0;i<db.Apartmentinfo.apartments.size();i++)
 		{
 			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
-				return dB.Apartmentinfo.apartments.get(i);
+				return db.Apartmentinfo.apartments.get(i);
 			
 		}
 		return null;

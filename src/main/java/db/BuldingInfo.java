@@ -1,4 +1,4 @@
-package dB;
+package db;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
@@ -31,9 +31,9 @@ private static final Logger LOGGER = Logger.getLogger(MyData.class.getName());
    
 	}
 	public static boolean IfFound(String buldingid) {
-		for(int i=0;i<dB.BuldingInfo.buildings.size();i++)
+		for(int i=0;i<db.BuldingInfo.buildings.size();i++)
 		{
-			if(dB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
+			if(db.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
 				return true;
 			
 		}

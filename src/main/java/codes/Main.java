@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 import java.util.logging.Logger;
 
-
-import dB.Apartmentinfo;
-import dB.BuldingInfo;
-import dB.FurnetureInfo;
+import db.Apartmentinfo;
+import db.BuldingInfo;
+import db.FurnetureInfo;
 
 public class Main {
 	static Scanner input = new Scanner(System.in);
@@ -111,7 +110,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter bulding id");
 		    		 buldingid=input.nextLine();
-		    		if(dB.BuldingInfo.IfFound(buldingid))
+		    		if(db.BuldingInfo.IfFound(buldingid))
 		    		{
 		    			 LOGGER.info("enter Apartment id");
 		    			 apID=input.nextLine();
@@ -147,10 +146,10 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(dB.Apartmentinfo.ifFoundap(apID))
+	    			 if(db.Apartmentinfo.ifFoundap(apID))
 			    		{
 	    				 Apartment ap =new Apartment();
-	    				ap= dB.Apartmentinfo.findmyapartment(apID);
+	    				ap= db.Apartmentinfo.findmyapartment(apID);
 	    				LOGGER.info("enter new photo");
 		    			 photo=input.nextLine();
 		    			Apartment.changeApartmentPhoto(apID, photo);
@@ -166,7 +165,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(dB.Apartmentinfo.ifFoundap(apID))
+	    			 if(db.Apartmentinfo.ifFoundap(apID))
 			    		{
 
 	    				LOGGER.info("enter new price");
@@ -184,7 +183,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(dB.Apartmentinfo.ifFoundap(apID))
+	    			 if(db.Apartmentinfo.ifFoundap(apID))
 			    		{
 
 	    				LOGGER.info("enter new max");
@@ -202,7 +201,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(dB.Apartmentinfo.ifFoundap(apID))
+	    			 if(db.Apartmentinfo.ifFoundap(apID))
 			    		{
 
 	    				LOGGER.info("enter student Type");
@@ -300,7 +299,7 @@ public class Main {
        
 	       if(d.tenantIsLogged){
 	    	   Tenants ten=new Tenants();
-	    	   for(Tenants t : dB.UserInfo.tenants) {
+	    	   for(Tenants t : db.UserInfo.tenants) {
 	    		   if (t.getUsername().equals(username)) {
 	    			   ten=t;
 	    			   

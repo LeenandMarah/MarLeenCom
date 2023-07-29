@@ -1,11 +1,14 @@
 package codes;
 
+import java.util.logging.Logger;
+
 public class Building {
 	private String bId;
     private String ownerId;
     private int floors;
     private String location;
     private int apartsNum;
+    private static final Logger LOGGER = Logger.getLogger(MyData.class.getName());
 	public Building(String bId,String ownerId, int floors, String location, int apartsNum) {
 		this.bId=bId;
 		this.ownerId = ownerId;
@@ -49,9 +52,9 @@ public class Building {
 	
 	
 	public static boolean ifFound(String buldingid) {
-		for(int i=0;i<dB.BuldingInfo.buildings.size();i++)
+		for(int i=0;i<db.BuldingInfo.buildings.size();i++)
 		{
-			if(dB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
+			if(db.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
 				return true;
 			
 		}
@@ -59,10 +62,10 @@ public class Building {
 	}
 
 	public static Building findBuilding(String buldingid) {
-		for(int i=0;i<dB.BuldingInfo.buildings.size();i++)
+		for(int i=0;i<db.BuldingInfo.buildings.size();i++)
 		{
-			if(dB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
-				return dB.BuldingInfo.buildings.get(i);
+			if(db.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
+				return db.BuldingInfo.buildings.get(i);
 
 		}
 		return null;
@@ -75,7 +78,7 @@ public class Building {
 		floor=b.getFloors();
 		for(int i=floor; i>0;i--)
 		{
-			System.out.println("Floor"+i);
+			LOGGER.info("Floor"+i);
 		}
 
 

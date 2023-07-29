@@ -1,14 +1,15 @@
 package codes;
 import java.util.Scanner;
 import java.util.logging.Logger;
-import dB.UserInfo;
+
+import db.UserInfo;
 
 public class MyData {
 	static Scanner input = new Scanner(System.in);
 	private static final Logger LOGGER = Logger.getLogger(MyData.class.getName());
-	  public  boolean adminIsLogged;
-	public   boolean ownerIsLogged;
-	public   boolean tenantIsLogged;
+	  public static   boolean adminIsLogged;
+	public static   boolean ownerIsLogged;
+	public  static  boolean tenantIsLogged;
 	public String type;
 	public static boolean requst=false;
 	public static String answer;
@@ -20,18 +21,18 @@ public class MyData {
 		
 	}
 	String userName;
-	String Password;
+	String password;
 	
 	public String buldingid;
 	
-	public String apID;
-	public String photo;
-	public int numofbeds;
-	public int numofbath;
-	public int balcon;
-	public int floor;
-	public int max;
-	public int price;
+	public static String apID;
+	public static String photo;
+	public static int numofbeds;
+	public static int numofbath;
+	public static int balcon;
+	public static int floor;
+	public static int max;
+	public static int price;
 	
 	
    
@@ -97,9 +98,9 @@ public class MyData {
 
 	public String sendRequest() {
 		
-		System.out.println("you have new request "+"\n"+apID+" "+ (String) photo+" " +numofbeds+" "+numofbath+" "+balcon+" "+floor+" "+max+" "+price);
+		LOGGER.info("you have new request "+"\n"+apID+" "+ (String) photo+" " +numofbeds+" "+numofbath+" "+balcon+" "+floor+" "+max+" "+price);
 		
-		System.out.println("Accept ? yes or no");
+		LOGGER.info("Accept ? yes or no");
 		answer=input.next();
 		return answer;
 		

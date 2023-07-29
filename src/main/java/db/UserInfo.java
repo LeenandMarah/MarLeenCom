@@ -1,4 +1,4 @@
-package dB;
+package db;
 
 import java.util.ArrayList;
 import java.util.List;

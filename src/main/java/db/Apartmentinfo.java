@@ -1,4 +1,4 @@
-package dB;
+package db;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -56,7 +56,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
    
 	}
 	public static boolean ifFoundap(String apid) {
-		for(int i=0;i<dB.Apartmentinfo.apartments.size();i++)
+		for(int i=0;i<db.Apartmentinfo.apartments.size();i++)
 		{
 			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
 				return true;
@@ -65,7 +65,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 		return false;
 	}
 	public static Apartment findmyapartment(String apid) {
-		for(int i=0;i<dB.Apartmentinfo.apartments.size();i++)
+		for(int i=0;i<db.Apartmentinfo.apartments.size();i++)
 		{
 			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
 				return apartments.get(i);
@@ -164,7 +164,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 			  if(a.isStudentType()) {
 			 
 				  if(a.getaId().equals(id)) {
-					  for(Tenants t:dB.UserInfo.tenants ) {
+					  for(Tenants t:db.UserInfo.tenants ) {
 						  if(t.getApartId().equals(id)) {
 								LOGGER.info("------->  Your Room mates are:");
 								LOGGER.info("Name:"+t.getName()+","+"Age:"+t.getAge()+","+"Major:"+t.getMajor()+"\n");

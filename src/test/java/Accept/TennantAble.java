@@ -14,7 +14,7 @@ public class TennantAble {
 
 	@Then("view done")
 	public void viewDone() {
-	   assertTrue(dB.Apartmentinfo.viewAvilableAparts());
+	   assertTrue(db.Apartmentinfo.viewAvilableAparts());
 	}
 
 	@Given("tenant wants {string}")
@@ -29,7 +29,7 @@ public class TennantAble {
 
 	@Then("view correctly")
 	public void viewCorrectly() {
-	    assertTrue(dB.Apartmentinfo.viewInfo("1"));
+	    assertTrue(db.Apartmentinfo.viewInfo("1"));
 	}
 
 	@Given("gives apartmentID is0 {string}")
@@ -41,7 +41,7 @@ public class TennantAble {
 	
 	@Then("view faild")
 	public void viewFaild() {
-		assertFalse(dB.Apartmentinfo.viewInfo("0"));
+		assertFalse(db.Apartmentinfo.viewInfo("0"));
 	}
 
 }

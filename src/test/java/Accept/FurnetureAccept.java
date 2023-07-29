@@ -15,7 +15,7 @@ public void thatTenantWants(String string) {
 
 @Then("add is done")
 public void addIsDone() {
-   assertTrue(dB.FurnetureInfo.addItem("2", "photo", 200)==1);
+   assertTrue(db.FurnetureInfo.addItem("2", "photo", 200)==1);
 }
 
 @Given("that tenant wantss {string}")
@@ -25,7 +25,7 @@ public void thatTenantWantss(String string) {
 
 @Then("view is done")
 public void viewIsDone() {
-   assertTrue( dB.FurnetureInfo.show()==1);
+   assertTrue( db.FurnetureInfo.show()==1);
 }
 
 }
