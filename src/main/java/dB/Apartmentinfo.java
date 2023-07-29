@@ -1,15 +1,11 @@
-package DB;
+package dB;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Logger;
-
-import DB.*;
 import codes.*;
-import io.cucumber.java.it.Date;
 
 public class Apartmentinfo {
 public static List<Apartment> apartments = new ArrayList<>();
@@ -60,7 +56,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
    
 	}
 	public static boolean IfFoundap(String apid) {
-		for(int i=0;i<DB.Apartmentinfo.apartments.size();i++)
+		for(int i=0;i<dB.Apartmentinfo.apartments.size();i++)
 		{
 			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
 				return true;
@@ -69,7 +65,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 		return false;
 	}
 	public static Apartment findmyapartment(String apid) {
-		for(int i=0;i<DB.Apartmentinfo.apartments.size();i++)
+		for(int i=0;i<dB.Apartmentinfo.apartments.size();i++)
 		{
 			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
 				return apartments.get(i);
@@ -168,7 +164,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 			  if(a.isStudentType()) {
 			 
 				  if(a.getaId().equals(id)) {
-					  for(Tenants t:DB.UserInfo.tenants ) {
+					  for(Tenants t:dB.UserInfo.tenants ) {
 						  if(t.getApartId().equals(id)) {
 								LOGGER.info("------->  Your Room mates are:");
 								LOGGER.info("Name:"+t.getName()+","+"Age:"+t.getAge()+","+"Major:"+t.getMajor()+"\n");

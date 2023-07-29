@@ -2,7 +2,7 @@ package codes;
 
 public class Owner extends User {
 
-	public Owner(String username, String password, String pId, String type, int logged, String phoneNum) {
+	public Owner(String username, String password, String pId, String type, String phoneNum) {
 		super(username, password, pId, type, phoneNum);
 		 this.setType("Owner");
 	}
@@ -14,7 +14,7 @@ public class Owner extends User {
   
  
   
-public Owner(String username, String password, String pId, String type, int logged, String phoneNum, String name) {
+public Owner(String username, String password, String pId, String type, String phoneNum, String name) {
 	super(username, password, pId, type, phoneNum);
 	this.name = name;
 

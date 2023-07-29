@@ -4,7 +4,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import io.cucumber.java.en.*;
-import DB.Apartmentinfo;
 public class TennantAble {
 
 	@Given("tentant choose {string}")
@@ -15,7 +14,7 @@ public class TennantAble {
 
 	@Then("view done")
 	public void viewDone() {
-	   assertTrue(DB.Apartmentinfo.viewAvilableAparts());
+	   assertTrue(dB.Apartmentinfo.viewAvilableAparts());
 	}
 
 	@Given("tenant wants {string}")
@@ -30,7 +29,7 @@ public class TennantAble {
 
 	@Then("view correctly")
 	public void viewCorrectly() {
-	    assertTrue(DB.Apartmentinfo.viewInfo("1"));
+	    assertTrue(dB.Apartmentinfo.viewInfo("1"));
 	}
 
 	@Given("gives apartmentID is0 {string}")
@@ -42,7 +41,7 @@ public class TennantAble {
 	
 	@Then("view faild")
 	public void viewFaild() {
-		assertFalse(DB.Apartmentinfo.viewInfo("0"));
+		assertFalse(dB.Apartmentinfo.viewInfo("0"));
 	}
 
 }

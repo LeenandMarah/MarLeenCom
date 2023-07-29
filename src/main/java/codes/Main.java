@@ -2,14 +2,12 @@ package codes;
 
 import java.util.Scanner;
 
-import java.util.logging.*;
 import java.util.logging.Logger;
 
-import jdk.jfr.internal.*;
-import DB.BuldingInfo;
-import DB.FurnetureInfo;
-import codes.MyData;
-import DB.Apartmentinfo;
+
+import dB.Apartmentinfo;
+import dB.BuldingInfo;
+import dB.FurnetureInfo;
 
 public class Main {
 	static Scanner input = new Scanner(System.in);
@@ -18,7 +16,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		  MyData d=new MyData();
-		  Apartment p;
 		  Apartmentinfo f=new Apartmentinfo();
 		  String command;
 		  String buldingid;
@@ -36,7 +33,6 @@ public class Main {
 		  int apnum;
 		  String location;
 		  int num;
-		  int i;
 		  int r;
 		  boolean studentType;
 		  String nc;
@@ -115,7 +111,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter bulding id");
 		    		 buldingid=input.nextLine();
-		    		if(DB.BuldingInfo.IfFound(buldingid))
+		    		if(dB.BuldingInfo.IfFound(buldingid))
 		    		{
 		    			 LOGGER.info("enter Apartment id");
 		    			 apID=input.nextLine();
@@ -151,10 +147,10 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(DB.Apartmentinfo.IfFoundap(apID))
+	    			 if(dB.Apartmentinfo.IfFoundap(apID))
 			    		{
 	    				 Apartment ap =new Apartment();
-	    				ap= DB.Apartmentinfo.findmyapartment(apID);
+	    				ap= dB.Apartmentinfo.findmyapartment(apID);
 	    				LOGGER.info("enter new photo");
 		    			 photo=input.nextLine();
 		    			Apartment.changeApartmentPhoto(apID, photo);
@@ -170,7 +166,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(DB.Apartmentinfo.IfFoundap(apID))
+	    			 if(dB.Apartmentinfo.IfFoundap(apID))
 			    		{
 
 	    				LOGGER.info("enter new price");
@@ -188,7 +184,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(DB.Apartmentinfo.IfFoundap(apID))
+	    			 if(dB.Apartmentinfo.IfFoundap(apID))
 			    		{
 
 	    				LOGGER.info("enter new max");
@@ -206,7 +202,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter Apartment id");
 	    			 apID=input.nextLine();
-	    			 if(DB.Apartmentinfo.IfFoundap(apID))
+	    			 if(dB.Apartmentinfo.IfFoundap(apID))
 			    		{
 
 	    				LOGGER.info("enter student Type");
@@ -304,7 +300,7 @@ public class Main {
        
 	       if(d.tenantIsLogged){
 	    	   Tenants ten=new Tenants();
-	    	   for(Tenants t : DB.UserInfo.tenants) {
+	    	   for(Tenants t : dB.UserInfo.tenants) {
 	    		   if (t.getUsername().equals(username)) {
 	    			   ten=t;
 	    			   

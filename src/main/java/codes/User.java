@@ -1,7 +1,6 @@
 package codes;
 
-import DB.Apartmentinfo;
-import DB.UserInfo;
+import dB.UserInfo;
 
 public class User {
 	private String username;
@@ -59,7 +58,6 @@ public class User {
 		
 	
 	public static boolean ChangeOwnerPhoneNumber(String id, String phone2) {
-		// TODO Auto-generated method stub
 		User u =new User();
 
 			u= User.findMyUser(id);
@@ -68,7 +66,6 @@ public class User {
 
 	}
 	private static User findMyUser(String id) {
-		// TODO Auto-generated method stub
 		for (User a: UserInfo.users)
 		{
 			if(a.getpId().equals(id)) {

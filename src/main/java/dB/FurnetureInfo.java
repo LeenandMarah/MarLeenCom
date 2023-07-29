@@ -1,11 +1,10 @@
-package DB;
+package dB;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-
 import codes.Furneture;
-import codes.User;
+
 
 public class FurnetureInfo {
 	private static final Logger LOGGER = Logger.getLogger(FurnetureInfo.class.getName());
@@ -27,7 +26,6 @@ public class FurnetureInfo {
 	
 	public static int addItem(String id,String photo,int price) {
 		int x= furnetures.size();
-		/////
 		Furneture f=new Furneture();
 		f.setId((furnetures.get(x-1).getId())+1);
 		f.setPersonId(id);

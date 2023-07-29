@@ -15,7 +15,6 @@ public class Building {
 	}
 	static int floor;
 	public Building() {
-		// TODO Auto-generated constructor stub
 	}
 	public String getbId() {
 		return bId;
@@ -50,9 +49,9 @@ public class Building {
 	
 	
 	public static boolean IfFound(String buldingid) {
-		for(int i=0;i<DB.BuldingInfo.buildings.size();i++)
+		for(int i=0;i<dB.BuldingInfo.buildings.size();i++)
 		{
-			if(DB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
+			if(dB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
 				return true;
 			
 		}
@@ -60,10 +59,10 @@ public class Building {
 	}
 
 	public static Building FindBuilding(String buldingid) {
-		for(int i=0;i<DB.BuldingInfo.buildings.size();i++)
+		for(int i=0;i<dB.BuldingInfo.buildings.size();i++)
 		{
-			if(DB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
-				return DB.BuldingInfo.buildings.get(i);
+			if(dB.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
+				return dB.BuldingInfo.buildings.get(i);
 
 		}
 		return null;

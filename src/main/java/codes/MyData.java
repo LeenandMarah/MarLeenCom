@@ -1,13 +1,7 @@
 package codes;
 import java.util.Scanner;
-
-import java.util.ArrayList;
-
-import java.util.List;
 import java.util.logging.Logger;
-
-import DB.BuldingInfo;
-import DB.UserInfo;
+import dB.UserInfo;
 
 public class MyData {
 	static Scanner input = new Scanner(System.in);
@@ -104,7 +98,7 @@ public class MyData {
 	public String sendRequest() {
 		
 		System.out.println("you have new request "+"\n"+apID+" "+ (String) photo+" " +numofbeds+" "+numofbath+" "+balcon+" "+floor+" "+max+" "+price);
-		// TODO Auto-generated method stub
+		
 		System.out.println("Accept ? yes or no");
 		answer=input.next();
 		return answer;
@@ -127,10 +121,6 @@ public class MyData {
 		floor=floor1;
 		max=max1;
 		price=price1;
-		 
-		
-		
-		// TODO Auto-generated method stub
 		
 	}
 

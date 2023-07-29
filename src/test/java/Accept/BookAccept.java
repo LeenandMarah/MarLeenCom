@@ -3,8 +3,6 @@ package Accept;
 import static org.junit.Assert.assertTrue;
 
 import io.cucumber.java.en.*;
-import DB.Apartmentinfo;
-import DB.UserInfo;
 public class BookAccept {
 	
 	
@@ -21,12 +19,12 @@ public class BookAccept {
 	@Then("booked done")
 	public void bookedDone() {
 		
-	    assertTrue(DB.Apartmentinfo.book("2",DB.UserInfo.tenants.get(0))==1 );
+	    assertTrue(dB.Apartmentinfo.book("2",dB.UserInfo.tenants.get(0))==1 );
 	}
 	
 	@Then("bill is showed")
 	public void billIsShowed() {
-	    assertTrue(DB.Apartmentinfo.showBill(DB.UserInfo.tenants.get(0),"2")==1);
+	    assertTrue(dB.Apartmentinfo.showBill(dB.UserInfo.tenants.get(0),"2")==1);
 	}
 	
 	@Given("apartment id is1 {string}")
@@ -37,7 +35,7 @@ public class BookAccept {
 
 	@Then("booked falied")
 	public void bookedFalied() {
-		 assertTrue(DB.Apartmentinfo.book("1",DB.UserInfo.tenants.get(0))==0 );
+		 assertTrue(dB.Apartmentinfo.book("1",dB.UserInfo.tenants.get(0))==0 );
 	    
 	}
 }

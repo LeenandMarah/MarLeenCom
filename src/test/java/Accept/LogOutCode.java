@@ -1,6 +1,5 @@
 package Accept;
 import static org.junit.Assert.assertTrue;
-
 import codes.MyData;
 import io.cucumber.java.en.*;
 
@@ -29,17 +28,3 @@ public class LogOutCode {
 	
 }
 
-
-/*MyAppInfo myAppInfo =new MyAppInfo();
-	@Given("that the administrator is logged in")
-	public void thatTheAdministratorIsLoggedIn() {
-		myAppInfo.login();
-		assertTrue(myAppInfo.isLoggedIn());
-	
-	}
-
-	@Then("the administrator will log out")
-	public void theAdministratorWillLogOut() {
-		myAppInfo.logout();
-		assertFalse(myAppInfo.isLoggedIn());
-	}*/
