@@ -94,7 +94,6 @@ public class ApatmentforAdmin {
 
 	@Then("student Type changed succesfully")
 	public void studentTypeChangedSuccesfully() {
-		
 
 		result =Apartment.changeApartmentStudentType("1",true);
 		assertTrue(result==true);

@@ -1,6 +1,6 @@
 package Accept;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import io.cucumber.java.en.*;
 public class BookAccept {
@@ -9,12 +9,12 @@ public class BookAccept {
 
 	@Given("tenant wants1 {string}")
 	public void tenantWants1(String string) {
-		 assertTrue(string.equals("book"));
+		 assertEquals(string,"book");
 	    
 	}
 	@Given("apartment id is {string}")
 	public void apartmentIdIs(String string) {
-		 assertTrue(string.equals("2"));
+		 assertEquals(string,"2");
 	}
 	@Then("booked done")
 	public void bookedDone() {
@@ -29,7 +29,7 @@ public class BookAccept {
 	
 	@Given("apartment id is1 {string}")
 	public void apartmentIdIs1(String string) {
-		assertTrue(string.equals("1"));
+		assertEquals(string,"1");
 	    
 	}
 

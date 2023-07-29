@@ -7,7 +7,7 @@ import db.UserInfo;
 public class MyData {
 	static Scanner input = new Scanner(System.in);
 	private static final Logger LOGGER = Logger.getLogger(MyData.class.getName());
-	  public static   boolean adminIsLogged;
+	public static   boolean adminIsLogged;
 	public static   boolean ownerIsLogged;
 	public  static  boolean tenantIsLogged;
 	public String type;
