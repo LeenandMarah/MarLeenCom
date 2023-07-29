@@ -5,13 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import codes.*;
 public class ApatmentforAdmin {
 	   
 	public  ApatmentforAdmin() {
-		Admin a;
 		
 	    
 	}
@@ -45,13 +44,13 @@ public class ApatmentforAdmin {
 	
 	@Given("admin wants2 {string}")
 	public void adminWants2(String string) {
-		assertTrue(string.equals("change Apartment photo"));
+		assertEquals(string,"change Apartment photo");
 	    
 	}
 	
 	@Given("aId is {string}")
 	public void aIdIs(String string) {
-		assertTrue(string.equals("1"));
+		assertEquals(string,"1");
 	    
 	}
 
@@ -63,7 +62,7 @@ public class ApatmentforAdmin {
 	}
 	@Given("admin wants3 {string}")
 	public void adminWants3(String string) {
-		assertTrue(string.equals("change Apartment price"));
+		assertEquals(string,"change Apartment price");
 	}
 
 	@Then("price changed succesfully")
