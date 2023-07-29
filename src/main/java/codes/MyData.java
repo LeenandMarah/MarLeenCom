@@ -23,7 +23,7 @@ public class MyData {
 	String userName;
 	String password;
 	
-	public String buldingid;
+	public static String buldingid;
 	
 	public static String apID;
 	public static String photo;
@@ -110,7 +110,7 @@ public class MyData {
 
 
 
-	public void saveRequest(String buldingid1, String apID1, String photo1, int numofbeds1, int numofbath1, int balcon1,
+	public static void saveRequest(String buldingid1, String apID1, String photo1, int numofbeds1, int numofbath1, int balcon1,
 			int floor1, int max1, int price1) {
 		
 		buldingid=buldingid1;

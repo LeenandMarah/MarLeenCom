@@ -8,7 +8,7 @@ public class Building {
     private int floors;
     private String location;
     private int apartsNum;
-    private static final Logger LOGGER = Logger.getLogger(MyData.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Building.class.getName());
 	public Building(String bId,String ownerId, int floors, String location, int apartsNum) {
 		this.bId=bId;
 		this.ownerId = ownerId;
