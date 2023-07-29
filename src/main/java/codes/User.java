@@ -57,7 +57,7 @@ public class User {
 	
 		
 	
-	public static boolean ChangeOwnerPhoneNumber(String id, String phone2) {
+	public static boolean changeOwnerPhoneNumber(String id, String phone2) {
 		User u =new User();
 
 			u= User.findMyUser(id);

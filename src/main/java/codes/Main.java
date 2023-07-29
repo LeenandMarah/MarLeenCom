@@ -110,7 +110,7 @@ public class Main {
 	    		 {
 	    			 LOGGER.info("enter bulding id");
 		    		 buldingid=input.nextLine();
-		    		if(db.BuldingInfo.IfFound(buldingid))
+		    		if(db.BuldingInfo.ifFound(buldingid))
 		    		{
 		    			 LOGGER.info("enter Apartment id");
 		    			 apID=input.nextLine();
@@ -239,7 +239,7 @@ public class Main {
 		    			 User user=new User();
 
 		    			 user=d.checkLogin(username, password);
-		    			 BuldingInfo.FindBuildingForOwner(user.getpId());
+		    			 BuldingInfo.findBuildingForOwner(user.getpId());
 		    			 for (Building b: BuldingInfo.Ownerbuildings)
 		    			 {
 

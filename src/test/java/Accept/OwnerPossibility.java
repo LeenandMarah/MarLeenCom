@@ -60,7 +60,7 @@ public class OwnerPossibility {
 	@Then("phone number is changed succesfully")
 	public void phoneNumberIsChangedSuccesfully() {
 		
-		result =User.ChangeOwnerPhoneNumber("1", "0599765");
+		result =User.changeOwnerPhoneNumber("1", "0599765");
 		assertTrue(result==true);
 	}
 

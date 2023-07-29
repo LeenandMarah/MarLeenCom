@@ -16,8 +16,8 @@ private static final Logger LOGGER = Logger.getLogger(MyData.class.getName());
 	static {
 	
 	Building b = new Building("1","1",3,"Nablus-Rafidya",6) ;
-	Building u = new Building("2","2",3,"Nablus-Rafidya",6) ;
-	Building i = new Building("3","2",3,"Nablus-Rafidya",6) ;
+	Building u = new Building("2","2",3,"Ramallah-Irsal",6) ;
+	Building i = new Building("3","2",3,"Khalel-doora",6) ;
 	
 		
 	buildings.add(b);
@@ -30,7 +30,7 @@ private static final Logger LOGGER = Logger.getLogger(MyData.class.getName());
 	
    
 	}
-	public static boolean IfFound(String buldingid) {
+	public static boolean ifFound(String buldingid) {
 		for(int i=0;i<db.BuldingInfo.buildings.size();i++)
 		{
 			if(db.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
@@ -40,7 +40,7 @@ private static final Logger LOGGER = Logger.getLogger(MyData.class.getName());
 		return false;
 	}
 
-	public static void FindBuildingForOwner(String ownerId) {
+	public static void findBuildingForOwner(String ownerId) {
 		 for (Building b: BuldingInfo.buildings)
 		{
 			if(b.getOwnerId().equals(ownerId))
