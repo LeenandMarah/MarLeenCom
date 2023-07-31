@@ -96,9 +96,9 @@ public class MyData {
 
 
 
-	public String sendRequest() {
+	public static String sendRequest() {
 		
-		LOGGER.info("you have new request "+"\n"+apID+" "+ (String) photo+" " +numofbeds+" "+numofbath+" "+balcon+" "+floor+" "+max+" "+price);
+		LOGGER.info("you have new request "+"\n"+apID+" "+ photo+" " +numofbeds+" "+numofbath+" "+balcon+" "+floor+" "+max+" "+price);
 		
 		LOGGER.info("Accept ? yes or no");
 		answer=input.next();

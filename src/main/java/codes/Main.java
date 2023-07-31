@@ -1,25 +1,35 @@
 package codes;
 
+
+
 import java.util.Scanner;
+
 
 import java.util.logging.Logger;
 
-import db.Apartmentinfo;
+
+
 import db.BuldingInfo;
 import db.FurnetureInfo;
+import db.UserInfo;
+import db.Apartmentinfo;
 
 public class Main {
 	static Scanner input = new Scanner(System.in);
-
+	static Scanner inputt = new Scanner(System.in);
 	private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
 	public static void main(String[] args) {
 		  MyData d=new MyData();
+		  Apartment p;
 		  Apartmentinfo f=new Apartmentinfo();
 		  String command;
 		  String buldingid;
 		  String apID;
+		  String apID2;
 		  String answer="";
+		  String phone;
+		  String information;
 		   int price;
 		  int numofbeds;
 		  int numofbath;
@@ -32,6 +42,7 @@ public class Main {
 		  int apnum;
 		  String location;
 		  int num;
+		  int i;
 		  int r;
 		  boolean studentType;
 		  String nc;
@@ -45,8 +56,9 @@ public class Main {
 		
 		while(true) {
 		LOGGER.info("Enter username:");
+		
 		String username=input.nextLine();
-		LOGGER.info("Enter password:");
+		LOGGER.info("Enter password :");
 		String password=input.nextLine();
 		User u =new User();
 		u.setUsername(username);
@@ -78,6 +90,7 @@ public class Main {
 	    				 {
 	    					Apartment.addApartment(d.buldingid, d.apID, d.photo, d.numofbeds,d.numofbath, d.balcon, d.floor, d.max, d.price);
 	    				 }
+	    				 LOGGER.info("Done!");
 
 	    			 }
 	    			 else
@@ -85,147 +98,20 @@ public class Main {
 	    				 LOGGER.info("NO RQUESTS");
 	    			 }
 
-	    			 break;
-	    		 }
-	    		 if(command.equals("add Building")) {
-	    		 LOGGER.info("enter bulding id");
-	    		 buldingid=input.nextLine();
-	    		 LOGGER.info("enter owner id");
-	    		 bowner=input.nextLine();
-	    		 LOGGER.info("enter number of floors");
-	    		 floors=input.nextInt();
-	    		 LOGGER.info("enter bulding location");
-	    		 location=input.nextLine();
-	    		 LOGGER.info("enter number of apartments");
-	    		 apnum=input.nextInt();
-	    		 Building b=new Building(buldingid, bowner, floors, location, apnum);
-	    		 BuldingInfo.buildings.add(b);
-	    		num=BuldingInfo.buildings.size();
-	    		 
-	    		 
-	    		 LOGGER.info(Integer.toString(num)+"hiiiiiii");
-	    		 break;
-	    		 }
-	    		 if(command.equals("add Apartment")) 
-	    		 {
-	    			 LOGGER.info("enter bulding id");
-		    		 buldingid=input.nextLine();
-		    		if(db.BuldingInfo.ifFound(buldingid))
-		    		{
-		    			 LOGGER.info("enter Apartment id");
-		    			 apID=input.nextLine();
-			    		 LOGGER.info("enter photo");
-			    		 photo=input.nextLine();
-			    		 LOGGER.info("enter number of bedrooms");
-			    		 numofbeds=input.nextInt();
-			    		 LOGGER.info("enter number of Bathrooms");
-			    		 numofbath=input.nextInt();
-			    		 LOGGER.info("enter enter number of Balcons");
-			    		 balcon=input.nextInt();
-			    		 LOGGER.info("enter number of floor");		    		 
-			    		 floor=input.nextInt();
-			    		 LOGGER.info("enter number of people");
-			    		 max=input.nextInt();
-			    		 LOGGER.info("enter price");
-			    		 price=input.nextInt();
-
-			    		num=Apartmentinfo.apartments.size();
-			    	 Apartment.addApartment(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price)	;
-			    		num=Apartmentinfo.apartments.size();
-			    		 LOGGER.info(Integer.toString(num)+"hiiiiiii");
-			    		 break;
-			    		 
-		    		}
-		    		else
-		    		{
-		    			 LOGGER.info("Opps! no such building");
-		    		}
-		    		 
-	    		 }
-	    		 if(command.equals("change apartment photo")) 
-	    		 {
-	    			 LOGGER.info("enter Apartment id");
-	    			 apID=input.nextLine();
-	    			 if(db.Apartmentinfo.ifFoundap(apID))
-			    		{
-	    				 Apartment ap =new Apartment();
-	    				ap= db.Apartmentinfo.findmyapartment(apID);
-	    				LOGGER.info("enter new photo");
-		    			 photo=input.nextLine();
-		    			Apartment.changeApartmentPhoto(apID, photo);
-
-			    		}
-	    			 else
-			    		{
-			    			 LOGGER.info("Opps! no such apartment");
-			    		}
-	    		 }
-
-	    		 if(command.equals("change apartment price"))
-	    		 {
-	    			 LOGGER.info("enter Apartment id");
-	    			 apID=input.nextLine();
-	    			 if(db.Apartmentinfo.ifFoundap(apID))
-			    		{
-
-	    				LOGGER.info("enter new price");
-		    			 price=input.nextInt();
-		    			Apartment.changeApartmentPrice(apID, price);
-
-			    		}
-	    			 else
-			    		{
-			    			 LOGGER.info("Opps! no such apartment");
-			    		}
-	    		 }
-
-	    		 if(command.equals("change apartment max"))
-	    		 {
-	    			 LOGGER.info("enter Apartment id");
-	    			 apID=input.nextLine();
-	    			 if(db.Apartmentinfo.ifFoundap(apID))
-			    		{
-
-	    				LOGGER.info("enter new max");
-		    			max=input.nextInt();
-		    			Apartment.changeApartmentMax(apID, max);
-
-			    		}
-	    			 else
-			    		{
-			    			 LOGGER.info("Opps! no such apartment");
-			    		}
-	    		 }
-
-	    		 if(command.equals("change apartment student Type"))
-	    		 {
-	    			 LOGGER.info("enter Apartment id");
-	    			 apID=input.nextLine();
-	    			 if(db.Apartmentinfo.ifFoundap(apID))
-			    		{
-
-	    				LOGGER.info("enter student Type");
-	    	             studentType=input.nextBoolean();
-		    			Apartment.changeApartmentStudentType(apID,studentType);
-	    				
-			    		}
-	    			 else
-			    		{
-			    			 LOGGER.info("Opps! no such apartment");
-			    		}
+	    			
 	    		 }
 	    		 
 	    		 
-	    		 
-	    		 
-	    		 
-	    	   }
+	    		
 	     // continue;
+	       }
 	       }
 	       
 	       if(d.ownerIsLogged){
 	    	   LOGGER.info("-> -> -> -> -> -> -> -> -> -> Welcome Owner "+username+"  <- <- <- <- <- <- <- <- <- <-");
 	    	   while(d.ownerIsLogged) {
+	    		   LOGGER.info("what would you like to do \n"+"Dashboard *** Send Request *** change apartment photo *** change apartment price *** change  phone number *** Available services");
+	    		   
 		    		 command=input.nextLine(); 
 		    		 if(command.equals("LogOut")){
 		    			 d.logOut("Owner");
@@ -244,9 +130,11 @@ public class Main {
 		    			 {
 
 		    				 System.out.println("building"+b.getbId());
+		    				
 
 
 		    			 }
+		    			 BuldingInfo.Ownerbuildings.clear();
 		    			 LOGGER.info("choose the bulding you want");
 		    			 buldingid=input.nextLine();
 
@@ -258,9 +146,21 @@ public class Main {
 		    			 {
 
 		    				 System.out.println("apartment"+a.getaId());
-
+		    				 
 
 		    			 }
+		    			 Apartmentinfo.BuildingApartments.clear();
+		    			 
+		    			 LOGGER.info("choose the apartment you want");
+		    			 apID2=inputt.nextLine();
+		    			 
+		    			 
+		    			 UserInfo.findTenentForApartment(apID2);
+		    			 for(Tenants t: UserInfo.apartmentTenants)
+		    			 {
+		    				 System.out.println("Tenant "+t.getName()+" "+t.getPhoneNum());
+		    			 }
+		    			 UserInfo.apartmentTenants.clear();
 
 
 		    		 }
@@ -289,13 +189,109 @@ public class Main {
 				    	// Apartment.addApartment(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price)	;
 				    		d.requst=true;
 				    		 d.saveRequest(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price);
-				    		 break;
+				    		 LOGGER.info("Done!");
 
 
 		    		 }
+		    		 
+		    		 if(command.equals("change apartment photo")) 
+		    		 {
+		    			 LOGGER.info("enter Apartment id");
+		    			 apID=input.nextLine();
+		    			 if(db.Apartmentinfo.ifFoundap(apID))
+				    		{
+		    				 Apartment ap =new Apartment();
+		    				ap= db.Apartmentinfo.findmyapartment(apID);
+		    				LOGGER.info("enter new photo");
+			    			 photo=input.nextLine();
+			    			Apartment.changeApartmentPhoto(apID, photo);
+			    			LOGGER.info("Done!");
+
+				    		}
+		    			 else
+				    		{
+				    			 LOGGER.info("Opps! no such apartment");
+				    		}
+		    		 }
+
+		    		 if(command.equals("change apartment price"))
+		    		 {
+		    			 LOGGER.info("enter Apartment id");
+		    			 apID=input.nextLine();
+		    			 if(db.Apartmentinfo.ifFoundap(apID))
+				    		{
+
+		    				LOGGER.info("enter new price");
+			    			 price=input.nextInt();
+			    			Apartment.changeApartmentPrice(apID, price);
+			    			LOGGER.info("Done!");
+
+				    		}
+		    			 else
+				    		{
+				    			 LOGGER.info("Opps! no such apartment");
+				    		}
+		    		 }
+
+		    		 if(command.equals("change Location"))
+		    		 {
+		    			 LOGGER.info("enter bulding id");
+			    		 buldingid=input.nextLine();
+		    			 if(Building.ifFound(buldingid))
+				    		{
+
+		    				LOGGER.info("enter new Location");
+			    			String Location = input.nextLine();
+			    			Building.changeLocation(buldingid, Location);
+			    			LOGGER.info("Done!");
+
+				    		}
+		    			 else
+				    		{
+				    			 LOGGER.info("Opps! no such apartment");
+				    		}
+		    		 }
+		    		 
+
+		    		 if(command.equals("change phone number"))
+		    		 {
+		    			 User user=new User();
+
+		    			 user=d.checkLogin(username, password);
+		    			 phone=inputt.nextLine();
+		    			 User.changeOwnerPhoneNumber(user.getpId(), phone);
+		    			 LOGGER.info("Done!");
+		    		 }
+
+
+		    		 if(command.equals("Available services"))
+		    		 {
+		    			 LOGGER.info("enter Apartment id");
+		    			 apID=input.nextLine();
+		    			 if(db.Apartmentinfo.ifFoundap(apID))
+				    		{
+		    				 LOGGER.info("enter new information");
+			    			 information=inputt.nextLine();
+
+		    				 Apartment.printservices(apID,information);
+		    				 LOGGER.info("Done!");
+		    				
+				    		}
+		    			 else
+				    		{
+				    			 LOGGER.info("Opps! no such apartment");
+				    		}
+		    		 }
+		    		 
+		    		 
+		    		 
+		    		 
+		    		 
+		    	   }
 	       }
+	       
 	    	  
-	       }
+	       
        
 	       if(d.tenantIsLogged){
 	    	   Tenants ten=new Tenants();
@@ -398,7 +394,7 @@ public class Main {
 
 	    		 else {
 		    			 LOGGER.info("Please enter valid command");
-		    			 break;
+		    			 
 		    		 }
 	    	    }
 	    	 

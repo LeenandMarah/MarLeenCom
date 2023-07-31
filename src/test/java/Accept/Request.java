@@ -1,5 +1,6 @@
 package Accept;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import codes.Apartment;
@@ -36,7 +37,7 @@ public class Request {
 
 	@Given("Admin Accepted1 is {string}")
 	public void adminAccepted1Is(String string) {
-		assertTrue(answer.equals("no"));
+	 	assertEquals(answer,"no");
 	}
 	@Then("offer is rejected")
 	public void offerIsRejected() {

@@ -2,13 +2,13 @@ package codes;
 
 import java.util.logging.Logger;
 
+
 public class Building {
 	private String bId;
     private String ownerId;
     private int floors;
     private String location;
     private int apartsNum;
-    private static final Logger LOGGER = Logger.getLogger(Building.class.getName());
 	public Building(String bId,String ownerId, int floors, String location, int apartsNum) {
 		this.bId=bId;
 		this.ownerId = ownerId;
@@ -18,6 +18,7 @@ public class Building {
 	}
 	static int floor;
 	public Building() {
+		// TODO Auto-generated constructor stub
 	}
 	public String getbId() {
 		return bId;
@@ -70,6 +71,15 @@ public class Building {
 		}
 		return null;
 	}
+	public static boolean changeLocation(String buldingid ,String loc) {
+		for(int i=0;i<db.BuldingInfo.buildings.size();i++)
+		{
+			if(db.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
+				 db.BuldingInfo.buildings.get(i).setLocation(loc);;
+
+		}
+		return true;
+	}
 
 	public static void buildingfloor(String buldingid) {
 		Building b=new Building();
@@ -78,7 +88,7 @@ public class Building {
 		floor=b.getFloors();
 		for(int i=floor; i>0;i--)
 		{
-			LOGGER.info("Floor"+i);
+			System.out.println(" Floor"+i);
 		}
 
 
@@ -93,3 +103,4 @@ public class Building {
 	
 
 }
+

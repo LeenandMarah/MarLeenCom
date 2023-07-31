@@ -3,6 +3,7 @@ package Accept;
 import static org.junit.Assert.assertTrue;
 
 import codes.Apartment;
+import codes.Building;
 import codes.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -33,7 +34,7 @@ public class OwnerPossibility {
 
 	@Then("printed succesfully")
 	public void printedSuccesfully() {
-	    
+	    assertTrue(Apartment.printservices("2", "new"));
 	}
 
 	@Given("Owner wants3 {string}")
@@ -64,6 +65,22 @@ public class OwnerPossibility {
 		assertTrue(result==true);
 	}
 
+	@Given("Owner wants5 {string}")
+	public void ownerWants5(String string) {
+		assertTrue(string.equals("change location"));
+	}
+
+	@Given("Building id is {string}")
+	public void buildingIdIs(String string) {
+		assertTrue(string.equals("1"));
+	}
+
+	@Then("location is changed succesfully")
+	public void locationIsChangedSuccesfully() {
+	    Building.changeLocation("1", "nablus");
+	}
 
 
 }
+
+

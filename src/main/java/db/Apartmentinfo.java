@@ -210,7 +210,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 
 
 
-	public static void buldingApartments(String bid,int floor) {
+	public static boolean buldingApartments(String bid,int floor) {
 		for (Apartment a: Apartmentinfo.apartments)
 		{
 			if(a.getBuildId().equals(bid)&& (a.getFloorNum()==floor)) {
@@ -219,8 +219,9 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 			}
 
 		}
-
+        return true;
 	}
+	
 	public static int showBill(Tenants ten, String nc) {
 		
 		  Building b= new Building();

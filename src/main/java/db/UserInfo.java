@@ -1,19 +1,19 @@
 package db;
 
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import codes.*;
 
 public class UserInfo {
+	private static final Logger LOGGER = Logger.getLogger(UserInfo.class.getName());
 	
-	private UserInfo() {
-		throw new IllegalStateException("Hi");
-	}
 	
 	public static List<User> users = new ArrayList<>();
 	public static List<Tenants> tenants = new ArrayList<>();
-	
+	public static List<Tenants> apartmentTenants =  new ArrayList<>();
 	
 	static {
 	
@@ -50,7 +50,20 @@ public class UserInfo {
     users.add(e);
     users.add(t);
 	}
-		
+	public static void findTenentForApartment(String apid){
+		 for (Tenants me: UserInfo.tenants)
+		{
+			if(me.getApartId().equals(apid))
+			{
+
+				apartmentTenants.add(me);
+				LOGGER.info(me.getApartId());
+			}
+
+
+		}
+		 
+	}
 
 
 }

@@ -3,6 +3,9 @@ package codes;
 
 
 import db.Apartmentinfo;
+import java.util.ArrayList;
+
+import db.Apartmentinfo;
 public class Apartment {
 	private String buildId;
 	private int price;
@@ -55,13 +58,13 @@ public class Apartment {
 
 
 
-	public Apartment(String buildId, String aId, String photo, int bedrooms, int bathrooms,int balcon) {
+	public Apartment(String buildId, String aId, String photo, int bedrooms, int Bathrooms,int balcon) {
 		
 		this.buildId = buildId;
 		this.bedrooms = bedrooms;
 		this.aId = aId;
 		this.photo=photo;
-		this.bathrooms = bathrooms;
+		this.bathrooms = Bathrooms;
 		this.balcon = balcon;
 		this.floorNum = 0;
 		this.max = 0;
@@ -198,15 +201,7 @@ public static  int sizeOfApartments() {
 	
 	
 
-  public static boolean ifFoundap(String apid) {
-		for(int i=0;i<db.Apartmentinfo.apartments.size();i++)
-		{
-			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
-				return true;
-			
-		}
-		return false;
-	}
+  
 	public static Apartment findmyapartment(String apid) {
 		for(int i=0;i<db.Apartmentinfo.apartments.size();i++)
 		{
@@ -215,6 +210,7 @@ public static  int sizeOfApartments() {
 			
 		}
 		return null;
+		
 	}
 	
 	public static boolean changeApartmentPhoto(String apid,String photo)
@@ -228,11 +224,14 @@ public static  int sizeOfApartments() {
 
 	}
 
+	
 
 
 
 	public static boolean changeApartmentPrice(String apID, int price2) {
+		// TODO Auto-generated method stub
 		Apartment p =new Apartment("1","1","ff",2,2,0);
+
 			p= Apartment.findmyapartment(apID);
 			 p.setPrice(price2);
 			 return true;
@@ -243,7 +242,10 @@ public static  int sizeOfApartments() {
 
 
 	public static boolean changeApartmentMax(String apID, int max2) {
+		// TODO Auto-generated method stub
+
 		Apartment p =new Apartment("1","1","ff",2,2,0);
+
 		p= Apartment.findmyapartment(apID);
 		 p.setMax(max2);
 		 return true;
@@ -253,6 +255,7 @@ public static  int sizeOfApartments() {
 
 
 	public static boolean changeApartmentStudentType(String apID, boolean studentType2) {
+		// TODO Auto-generated method stub
       Apartment p =new Apartment("1","1","ff",2,2,0);
 
 		p= Apartment.findmyapartment(apID);
@@ -261,10 +264,13 @@ public static  int sizeOfApartments() {
 
 	}
 
-	public static boolean printservices(String apID) {
+	public static boolean printservices(String apID,String newinfo) {
+		// TODO Auto-generated method stub
+
 		Apartment p =new Apartment("1","1","ff",2,2,0);
+
 		p= Apartment.findmyapartment(apID);
-		p.setInformation(apID);
+		p.setInformation(newinfo);
 		 return true;
 	}
 

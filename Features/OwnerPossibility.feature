@@ -20,3 +20,7 @@ Given Owner wants4 "change phone number"
 And Owner id is "1"
 Then phone number is changed succesfully
 
+Scenario: change location
+Given Owner wants5 "change location"
+And Building id is "1"
+Then location is changed succesfully
