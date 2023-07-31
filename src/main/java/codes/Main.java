@@ -102,8 +102,7 @@ public class Main {
 	    		 }
 	    		 
 	    		 
-	    		
-	     // continue;
+	    
 	       }
 	       }
 	       
@@ -145,7 +144,7 @@ public class Main {
 		    			 for (Apartment a: Apartmentinfo.BuildingApartments )
 		    			 {
 
-		    				 System.out.println("apartment"+a.getaId());
+		    				 LOGGER.info("apartment"+a.getaId());
 		    				 
 
 		    			 }

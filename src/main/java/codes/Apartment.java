@@ -3,10 +3,11 @@ package codes;
 
 
 import db.Apartmentinfo;
-import java.util.ArrayList;
 
-import db.Apartmentinfo;
+
+
 public class Apartment {
+	
 	private String buildId;
 	private int price;
 	private String photo;
@@ -58,13 +59,13 @@ public class Apartment {
 
 
 
-	public Apartment(String buildId, String aId, String photo, int bedrooms, int Bathrooms,int balcon) {
+	public Apartment(String buildId, String aId, String photo, int bedrooms, int bathrooms,int balcon) {
 		
 		this.buildId = buildId;
 		this.bedrooms = bedrooms;
 		this.aId = aId;
 		this.photo=photo;
-		this.bathrooms = Bathrooms;
+		this.bathrooms = bathrooms;
 		this.balcon = balcon;
 		this.floorNum = 0;
 		this.max = 0;
@@ -229,7 +230,7 @@ public static  int sizeOfApartments() {
 
 
 	public static boolean changeApartmentPrice(String apID, int price2) {
-		// TODO Auto-generated method stub
+	
 		Apartment p =new Apartment("1","1","ff",2,2,0);
 
 			p= Apartment.findmyapartment(apID);
@@ -242,7 +243,7 @@ public static  int sizeOfApartments() {
 
 
 	public static boolean changeApartmentMax(String apID, int max2) {
-		// TODO Auto-generated method stub
+		
 
 		Apartment p =new Apartment("1","1","ff",2,2,0);
 
@@ -255,7 +256,7 @@ public static  int sizeOfApartments() {
 
 
 	public static boolean changeApartmentStudentType(String apID, boolean studentType2) {
-		// TODO Auto-generated method stub
+	
       Apartment p =new Apartment("1","1","ff",2,2,0);
 
 		p= Apartment.findmyapartment(apID);
@@ -265,7 +266,7 @@ public static  int sizeOfApartments() {
 	}
 
 	public static boolean printservices(String apID,String newinfo) {
-		// TODO Auto-generated method stub
+		
 
 		Apartment p =new Apartment("1","1","ff",2,2,0);
 

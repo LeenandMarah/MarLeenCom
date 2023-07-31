@@ -2,8 +2,8 @@ package codes;
 
 import java.util.logging.Logger;
 
-
 public class Building {
+	private static final Logger LOGGER = Logger.getLogger(Apartment.class.getName());
 	private String bId;
     private String ownerId;
     private int floors;
@@ -18,7 +18,7 @@ public class Building {
 	}
 	static int floor;
 	public Building() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	public String getbId() {
 		return bId;
@@ -88,7 +88,7 @@ public class Building {
 		floor=b.getFloors();
 		for(int i=floor; i>0;i--)
 		{
-			System.out.println(" Floor"+i);
+			LOGGER.info(" Floor"+i);
 		}
 
 
