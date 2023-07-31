@@ -84,7 +84,7 @@ public class Building {
 	}
 
 	public static void buildingfloor(String buldingid) {
-		String s = new String("Floor");
+	
 	
          
 		b=findBuilding(buldingid);
@@ -92,7 +92,8 @@ public class Building {
 		for(int i=floor; i>0;i--)
 		{
 			
-			LOGGER.info(s.concat(Integer.toString(i)));
+			
+			LOGGER.info("Floor: {}"+Integer.toString(i));
 		}
 
 
