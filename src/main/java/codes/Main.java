@@ -25,7 +25,9 @@ public class Main {
 		
 		  String left="-> -> -> -> -> -> -> -> -> ->";
 		  String right="<- <- <- <- <- <- <- <- <- <-";
+		  String o="Opps! no such apartment";
 		  String c="enter Apartment id";
+		  String i ="enter the apartment ID:";
 		  String command;
 		  String buldingid;
 		  String apID;
@@ -205,7 +207,7 @@ public class Main {
 				    		}
 		    			 else
 				    		{
-				    			 LOGGER.info("Opps! no such apartment");
+				    			 LOGGER.info(o);
 				    		}
 		    		 }
 
@@ -224,7 +226,7 @@ public class Main {
 				    		}
 		    			 else
 				    		{
-				    			 LOGGER.info("Opps! no such apartment");
+				    			 LOGGER.info(o);
 				    		}
 		    		 }
 
@@ -243,7 +245,7 @@ public class Main {
 				    		}
 		    			 else
 				    		{
-				    			 LOGGER.info("Opps! no such apartment");
+				    			 LOGGER.info(o);
 				    		}
 		    		 }
 		    		 
@@ -274,7 +276,7 @@ public class Main {
 				    		}
 		    			 else
 				    		{
-				    			 LOGGER.info("Opps! no such apartment");
+				    			 LOGGER.info(o);
 				    		}
 		    		 }
 		    		 
@@ -320,14 +322,14 @@ public class Main {
 		    	       }
 
 		    	       else if(command.equals("show info")) {
-		    	    	   LOGGER.info("enter the apartment ID:");
+		    	    	   LOGGER.info(i);
 		    	    	   command = input.nextLine();
 		    	    	   Apartmentinfo.viewInfo(command);
 
 		    	       }
 
 		    	       else if(command.equals("book")) {
-			    			 LOGGER.info("enter apartment ID:");
+			    			 LOGGER.info(i);
 			    			 command = input.nextLine();
 			    			  
 			    			 r =  Apartmentinfo.book(command,ten);
