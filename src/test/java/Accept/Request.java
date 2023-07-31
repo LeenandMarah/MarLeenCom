@@ -11,13 +11,13 @@ import io.cucumber.java.en.Then;
 public class Request {
 	
 	
-	MyData d=new MyData();
+	
 	String answer;
 	@Given("Owner sent request {string}")
 	public void ownerSentRequest(String string) {
 		assertTrue(string.equals("Send Request"));
-		d.saveRequest("1", "1", "1", 2, 2, 1, 1, 1, 1);
-		 answer=d.sendRequest();
+		MyData.saveRequest("1", "1", "1", 2, 2, 1, 1, 1, 1);
+		 answer=MyData.sendRequest();
 		
 	}
 
@@ -31,7 +31,7 @@ public class Request {
 
 	@Then("offer added succesfully")
 	public void offerAddedSuccesfully() {
-		int size = Apartment.addApartment(d.buldingid, d.apID, d.photo, d.numofbeds,d.numofbath, d.balcon, d.floor); 
+		int size = Apartment.addApartment(MyData.buldingid, MyData.apID, MyData.photo, MyData.numofbeds,MyData.numofbath, MyData.balcon, MyData.floor); 
 		assertTrue(size>0);
 	}
 

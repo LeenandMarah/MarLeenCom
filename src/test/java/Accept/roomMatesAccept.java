@@ -2,6 +2,7 @@ package Accept;
 
 import io.cucumber.java.en.*;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -17,12 +18,12 @@ public class roomMatesAccept {
 	@Given("tenant choosed {string}")
 	public void tenantChoosed(String string) {
 	   
-		assertTrue(string.equals("y"));
+		assertEquals(string,"y");
 	}
 
 	@Then("show his roomMates done")
 	public void showHisRoomMatesDone() {
-	   assertTrue( db.Apartmentinfo.myNighbours("2")==1);
+	   assertEquals( db.Apartmentinfo.myNighbours("2"),1);
 	}
 	@Given("tenant  booked correctlyyy")
 	public void tenantBookedCorrectlyyy() {
@@ -32,7 +33,7 @@ public class roomMatesAccept {
 
 	@Given("tenant choosedn {string}")
 	public void tenantChoosedn(String string) {
-		assertTrue(string.equals("n"));
+		assertEquals(string,"n");
 	}
 	@Then("dont show")
 	public void dontShow() {
