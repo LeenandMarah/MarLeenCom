@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 public class Building {
 	private static final Logger LOGGER = Logger.getLogger(Building.class.getName());
 	
-	public static Building b=new Building();
+	 static Building b=new Building();
 	private String bId;
     private String ownerId;
     private int floors;
