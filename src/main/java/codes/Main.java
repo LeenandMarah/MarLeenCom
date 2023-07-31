@@ -22,7 +22,10 @@ public class Main {
 	public static void main(String[] args) {
 		 
 		 
-		  Apartmentinfo f=new Apartmentinfo();
+		
+		  String left="-> -> -> -> -> -> -> -> -> ->";
+		  String right="<- <- <- <- <- <- <- <- <- <-";
+		  String c="enter Apartment id";
 		  String command;
 		  String buldingid;
 		  String apID;
@@ -39,11 +42,10 @@ public class Main {
 		  int floor;
 		  String nc;
 		  int r;
-		 
-           FurnetureInfo fur=new FurnetureInfo();
+		
  
 
-		LOGGER.info("-> -> -> -> -> -> -> -> -> ->Sakan Marlee <- <- <- <- <- <- <- <- <- <-");
+		LOGGER.info(left+"Sakan Marlee "+right);
 		
 		
 		
@@ -65,7 +67,7 @@ public class Main {
 	       }
 		
 	       if(MyData.adminIsLogged){
-	    	   LOGGER.info("-> -> -> -> -> -> -> -> -> -> Welcome Admin "+username+"  <- <- <- <- <- <- <- <- <- <-");
+	    	   LOGGER.info(left+" Welcome Admin "+username+right);
 	    	    
 	    	   while(MyData.adminIsLogged) {
 	    		 command=input.nextLine(); 
@@ -101,7 +103,7 @@ public class Main {
 	       }
 	       
 	       if(MyData.ownerIsLogged){
-	    	   LOGGER.info("-> -> -> -> -> -> -> -> -> -> Welcome Owner "+username+"  <- <- <- <- <- <- <- <- <- <-");
+	    	   LOGGER.info(left+" Welcome Owner "+username+right);
 	    	   while(MyData.ownerIsLogged) {
 	    		   LOGGER.info("what would you like to do \n"+"Dashboard *** Send Request *** change apartment photo *** change apartment price *** change  phone number *** Available services");
 	    		   
@@ -163,7 +165,7 @@ public class Main {
 		    			 LOGGER.info("enter bulding id");
 			    		 buldingid=input.nextLine();
 
-			    			 LOGGER.info("enter Apartment id");
+			    			 LOGGER.info(c);
 			    			 apID=input.nextLine();
 				    		 LOGGER.info("enter photo");
 				    		 photo=input.nextLine();
@@ -179,7 +181,7 @@ public class Main {
 				    		 max=input.nextInt();
 				    		 LOGGER.info("enter price");
 				    		 price=input.nextInt();
-				    	// Apartment.addApartment(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price)	;
+				    
 				    		 MyData.requst=true;
 				    		 MyData.saveRequest(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price);
 				    		 LOGGER.info("Done!");
@@ -189,7 +191,7 @@ public class Main {
 		    		 
 		    		 if(command.equals("change apartment photo")) 
 		    		 {
-		    			 LOGGER.info("enter Apartment id");
+		    			 LOGGER.info(c);
 		    			 apID=input.nextLine();
 		    			 if(db.Apartmentinfo.ifFoundap(apID))
 				    		{
@@ -209,7 +211,7 @@ public class Main {
 
 		    		 if(command.equals("change apartment price"))
 		    		 {
-		    			 LOGGER.info("enter Apartment id");
+		    			 LOGGER.info(c);
 		    			 apID=input.nextLine();
 		    			 if(db.Apartmentinfo.ifFoundap(apID))
 				    		{
@@ -259,7 +261,7 @@ public class Main {
 
 		    		 if(command.equals("Available services"))
 		    		 {
-		    			 LOGGER.info("enter Apartment id");
+		    			 LOGGER.info(c);
 		    			 apID=input.nextLine();
 		    			 if(db.Apartmentinfo.ifFoundap(apID))
 				    		{
@@ -294,7 +296,7 @@ public class Main {
 	    			   
 	    		   }
 	    	   }
-	    	   LOGGER.info("-> -> -> -> -> -> -> -> -> -> Welcome Tenant "+username+"  <- <- <- <- <- <- <- <- <- <-");
+	    	   LOGGER.info(left+" Welcome Tenant "+username+right);
 	    	    while(MyData.tenantIsLogged) {
 	    	    	LOGGER.info("* Dashboard"+"* LogOut");
 		    		 command=input.nextLine(); 
@@ -307,12 +309,12 @@ public class Main {
 		    		 
 		    		 if(command.equals("Dashboard")) {
 		    			
-		    	       LOGGER.info("-> -> -> -> -> -> -> -> -> -> Tenant Dashboard  <- <- <- <- <- <- <- <- <- <-");
+		    	       LOGGER.info(left+" Tenant Dashboard "+right);
 		    	       LOGGER.info("                   ------------Aviable Houses---------"                            );
 		    	       LOGGER.info("\n"+"* view"+"\n"+"* show info"+"\n"+"* book"+"Furneture");
 		    	       command = input.nextLine();
 		    	       if(command.equals("view")) {
-		    	    	   f.viewAvilableAparts();
+		    	    	   Apartmentinfo.viewAvilableAparts();
                             
 		    	    	   
 		    	       }
@@ -320,7 +322,7 @@ public class Main {
 		    	       else if(command.equals("show info")) {
 		    	    	   LOGGER.info("enter the apartment ID:");
 		    	    	   command = input.nextLine();
-		    	    	   f.viewInfo(command);
+		    	    	   Apartmentinfo.viewInfo(command);
 
 		    	       }
 
@@ -328,7 +330,7 @@ public class Main {
 			    			 LOGGER.info("enter apartment ID:");
 			    			 command = input.nextLine();
 			    			  
-			    			 r = f.book(command,ten);
+			    			 r =  Apartmentinfo.book(command,ten);
 			    			 
 			    			    
 			    			 nc=command;
@@ -337,13 +339,13 @@ public class Main {
 			    			 LOGGER.info("Do you want to see who are your room mates? (y/n)");
 			    			 command = input.nextLine();
 			    			 if(command.equals("y")) {
-			    			    	f.myNighbours(nc);
+			    				 Apartmentinfo.myNighbours(nc);
 			    			    	
-			    			    	f.showBill(ten,nc);
+			    			    	 Apartmentinfo.showBill(ten,nc);
 			    			    }
 			    			  
 			    			 else {
-			    				 f.showBill(ten,nc);
+			    				 Apartmentinfo.showBill(ten,nc);
 			    			 }
 			    			
 			    			 
@@ -368,7 +370,7 @@ public class Main {
 		    	    		   LOGGER.info("Enter a price");
 		    	    		   int pric=input.nextInt();
 		    	    		   
-		    	    		  fur.addItem(ten.getpId(),photo2,pric);
+		    	    		   FurnetureInfo.addItem(ten.getpId(),photo2,pric);
 		    	    		  
 		    	    		  LOGGER.info("added");
 		    	    		  
@@ -377,7 +379,7 @@ public class Main {
 		    	    	   
 		    	    	   
 		    	    	   else if (command.equals("See")){
-		    	    		         fur.show();
+		    	    		   FurnetureInfo.show();
 		    	    		   
 		    	    		   
 		    	    	   }
