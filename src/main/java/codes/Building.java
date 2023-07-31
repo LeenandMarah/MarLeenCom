@@ -77,7 +77,7 @@ public class Building {
 		for(int i=0;i<db.BuldingInfo.buildings.size();i++)
 		{
 			if(db.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
-				 db.BuldingInfo.buildings.get(i).setLocation(loc);;
+				 db.BuldingInfo.buildings.get(i).setLocation(loc);
 
 		}
 		return true;
@@ -93,7 +93,7 @@ public class Building {
 		{
 			
 			
-			LOGGER.info("Floor: {}"+Integer.toString(i));
+			LOGGER.info("Floor: {}");
 		}
 
 

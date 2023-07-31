@@ -14,7 +14,7 @@ public class MyData {
 	public static boolean requst=false;
 	public static String answer;
 	
-	public void showError() {
+	public static void showError() {
 	    
 		LOGGER.info("You must Enter  a Real user");
 		
@@ -36,7 +36,7 @@ public class MyData {
 	
 	
    
-    public  User checkLogin(String username,String password) {
+    public static  User checkLogin(String username,String password) {
     	
          for (User u : UserInfo.users) {
         	 if(u.getUsername().equals(username)&&u.getPassword().equals(password)) {
@@ -76,7 +76,7 @@ public class MyData {
     }
 
 
-	public void logOut(String type) {
+	public static void logOut(String type) {
 		if(type.equals("Admin")) {
 			 adminIsLogged=false;
 		}

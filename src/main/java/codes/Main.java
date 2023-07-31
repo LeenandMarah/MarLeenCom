@@ -20,8 +20,8 @@ public class Main {
 	private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
 	public static void main(String[] args) {
-		  MyData d=new MyData();
-		  Apartment p;
+		 
+		 
 		  Apartmentinfo f=new Apartmentinfo();
 		  String command;
 		  String buldingid;
@@ -37,15 +37,9 @@ public class Main {
 		  int max;
 		  String photo;
 		  int floor;
-		  String bowner;
-		  int floors;
-		  int apnum;
-		  String location;
-		  int num;
-		  int i;
-		  int r;
-		  boolean studentType;
 		  String nc;
+		  int r;
+		 
            FurnetureInfo fur=new FurnetureInfo();
  
 
@@ -63,32 +57,32 @@ public class Main {
 		User u =new User();
 		u.setUsername(username);
 		u.setPassword(password);
-		 u= d.checkLogin(u.getUsername(),u.getPassword());
+		 u= MyData.checkLogin(u.getUsername(),u.getPassword());
 		   
-	       if(!d.adminIsLogged&&!d.ownerIsLogged&&!d.tenantIsLogged) {
-	    	   d.showError();
+	       if(!MyData.adminIsLogged&&!MyData.ownerIsLogged&&!MyData.tenantIsLogged) {
+	    	   MyData.showError();
 	    	  
 	       }
 		
-	       if(d.adminIsLogged){
+	       if(MyData.adminIsLogged){
 	    	   LOGGER.info("-> -> -> -> -> -> -> -> -> -> Welcome Admin "+username+"  <- <- <- <- <- <- <- <- <- <-");
 	    	    
-	    	   while(d.adminIsLogged) {
+	    	   while(MyData.adminIsLogged) {
 	    		 command=input.nextLine(); 
 	    		 if(command.equals("LogOut")){
-	    			 d.logOut("Admin");
+	    			 MyData.logOut("Admin");
 	    			 LOGGER.info("Bye Admin");	    			 
 	    			
 	    			 break;
 	    		 }
 	    		 if(command.equals("See Request")){
-	    			 if(d.requst)
+	    			 if(MyData.requst)
 	    			 {
-	    				 d.requst=false;
-	    				answer= d.sendRequest();
+	    				 MyData.requst=false;
+	    				answer= MyData.sendRequest();
 	    				 if (answer.equals("yes"))
 	    				 {
-	    					Apartment.addApartment(d.buldingid, d.apID, d.photo, d.numofbeds,d.numofbath, d.balcon, d.floor);
+	    					Apartment.addApartment(MyData.buldingid, MyData.apID, MyData.photo, MyData.numofbeds,MyData.numofbath, MyData.balcon, MyData.floor);
 	    				 }
 	    				 LOGGER.info("Done!");
 
@@ -106,14 +100,14 @@ public class Main {
 	       }
 	       }
 	       
-	       if(d.ownerIsLogged){
+	       if(MyData.ownerIsLogged){
 	    	   LOGGER.info("-> -> -> -> -> -> -> -> -> -> Welcome Owner "+username+"  <- <- <- <- <- <- <- <- <- <-");
-	    	   while(d.ownerIsLogged) {
+	    	   while(MyData.ownerIsLogged) {
 	    		   LOGGER.info("what would you like to do \n"+"Dashboard *** Send Request *** change apartment photo *** change apartment price *** change  phone number *** Available services");
 	    		   
 		    		 command=input.nextLine(); 
 		    		 if(command.equals("LogOut")){
-		    			 d.logOut("Owner");
+		    			 MyData.logOut("Owner");
 		    			 LOGGER.info("Bye Owner");
 		    			
 		    			 break;
@@ -123,7 +117,7 @@ public class Main {
 		    		 {
 		    			 User user=new User();
 
-		    			 user=d.checkLogin(username, password);
+		    			 user=MyData.checkLogin(username, password);
 		    			 BuldingInfo.findBuildingForOwner(user.getpId());
 		    			 for (Building b: BuldingInfo.Ownerbuildings)
 		    			 {
@@ -186,8 +180,8 @@ public class Main {
 				    		 LOGGER.info("enter price");
 				    		 price=input.nextInt();
 				    	// Apartment.addApartment(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price)	;
-				    		d.requst=true;
-				    		 d.saveRequest(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price);
+				    		 MyData.requst=true;
+				    		 MyData.saveRequest(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price);
 				    		 LOGGER.info("Done!");
 
 
@@ -256,7 +250,7 @@ public class Main {
 		    		 {
 		    			 User user=new User();
 
-		    			 user=d.checkLogin(username, password);
+		    			 user=MyData.checkLogin(username, password);
 		    			 phone=inputt.nextLine();
 		    			 User.changeOwnerPhoneNumber(user.getpId(), phone);
 		    			 LOGGER.info("Done!");
@@ -292,7 +286,7 @@ public class Main {
 	    	  
 	       
        
-	       if(d.tenantIsLogged){
+	       if(MyData.tenantIsLogged){
 	    	   Tenants ten=new Tenants();
 	    	   for(Tenants t : db.UserInfo.tenants) {
 	    		   if (t.getUsername().equals(username)) {
@@ -301,11 +295,11 @@ public class Main {
 	    		   }
 	    	   }
 	    	   LOGGER.info("-> -> -> -> -> -> -> -> -> -> Welcome Tenant "+username+"  <- <- <- <- <- <- <- <- <- <-");
-	    	    while(d.tenantIsLogged) {
+	    	    while(MyData.tenantIsLogged) {
 	    	    	LOGGER.info("* Dashboard"+"* LogOut");
 		    		 command=input.nextLine(); 
 		    		 if(command.equals("LogOut")){
-		    			 d.logOut("Tenant");
+		    			 MyData.logOut("Tenant");
 		    			 LOGGER.info("Bye Tenant");
 		    			
 		    			 break;
