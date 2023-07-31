@@ -34,7 +34,7 @@ public class ApatmentforAdmin {
 	@Then("add succesfully")
 	public void addSuccesfully() {
 		oldsize=Apartment.sizeOfApartments();
-		newsize=Apartment.addApartment("1", "1", "phohpo",2, 3, 1,2,4,200);
+		newsize=Apartment.addApartment("1", "1", "phohpo",2, 3, 1,2);
 		assertTrue((oldsize+1)==(newsize));
 		
 		

@@ -31,7 +31,7 @@ public class Request {
 
 	@Then("offer added succesfully")
 	public void offerAddedSuccesfully() {
-		int size = Apartment.addApartment(d.buldingid, d.apID, d.photo, d.numofbeds,d.numofbath, d.balcon, d.floor, d.max, d.price); 
+		int size = Apartment.addApartment(d.buldingid, d.apID, d.photo, d.numofbeds,d.numofbath, d.balcon, d.floor); 
 		assertTrue(size>0);
 	}
 

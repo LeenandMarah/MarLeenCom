@@ -3,7 +3,9 @@ package codes;
 import java.util.logging.Logger;
 
 public class Building {
-	private static final Logger LOGGER = Logger.getLogger(Apartment.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(Building.class.getName());
+	
+	public static Building b=new Building();
 	private String bId;
     private String ownerId;
     private int floors;
@@ -82,13 +84,15 @@ public class Building {
 	}
 
 	public static void buildingfloor(String buldingid) {
-		Building b=new Building();
-
+		String s = new String("Floor");
+	
+         
 		b=findBuilding(buldingid);
 		floor=b.getFloors();
 		for(int i=floor; i>0;i--)
 		{
-			LOGGER.info(" Floor"+i);
+			
+			LOGGER.info(s.concat(Integer.toString(i)));
 		}
 
 

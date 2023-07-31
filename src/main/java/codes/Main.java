@@ -88,7 +88,7 @@ public class Main {
 	    				answer= d.sendRequest();
 	    				 if (answer.equals("yes"))
 	    				 {
-	    					Apartment.addApartment(d.buldingid, d.apID, d.photo, d.numofbeds,d.numofbath, d.balcon, d.floor, d.max, d.price);
+	    					Apartment.addApartment(d.buldingid, d.apID, d.photo, d.numofbeds,d.numofbath, d.balcon, d.floor);
 	    				 }
 	    				 LOGGER.info("Done!");
 
