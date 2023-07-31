@@ -28,6 +28,8 @@ public class Main {
 		  String o="Opps! no such apartment";
 		  String c="enter Apartment id";
 		  String i ="enter the apartment ID:";
+		  String logO="LogOut";
+		  String done="Done";
 		  String command;
 		  String buldingid;
 		  String apID;
@@ -73,7 +75,7 @@ public class Main {
 	    	    
 	    	   while(MyData.adminIsLogged) {
 	    		 command=input.nextLine(); 
-	    		 if(command.equals("LogOut")){
+	    		 if(command.equals(logO)){
 	    			 MyData.logOut("Admin");
 	    			 LOGGER.info("Bye Admin");	    			 
 	    			
@@ -88,7 +90,7 @@ public class Main {
 	    				 {
 	    					Apartment.addApartment(MyData.buldingid, MyData.apID, MyData.photo, MyData.numofbeds,MyData.numofbath, MyData.balcon, MyData.floor);
 	    				 }
-	    				 LOGGER.info("Done!");
+	    				 LOGGER.info(done);
 
 	    			 }
 	    			 else
@@ -110,7 +112,7 @@ public class Main {
 	    		   LOGGER.info("what would you like to do \n"+"Dashboard *** Send Request *** change apartment photo *** change apartment price *** change  phone number *** Available services");
 	    		   
 		    		 command=input.nextLine(); 
-		    		 if(command.equals("LogOut")){
+		    		 if(command.equals(logO)){
 		    			 MyData.logOut("Owner");
 		    			 LOGGER.info("Bye Owner");
 		    			
@@ -186,7 +188,7 @@ public class Main {
 				    
 				    		 MyData.requst=true;
 				    		 MyData.saveRequest(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price);
-				    		 LOGGER.info("Done!");
+				    		 LOGGER.info(done);
 
 
 		    		 }
@@ -202,7 +204,7 @@ public class Main {
 		    				LOGGER.info("enter new photo");
 			    			 photo=input.nextLine();
 			    			Apartment.changeApartmentPhoto(apID, photo);
-			    			LOGGER.info("Done!");
+			    			LOGGER.info(done);
 
 				    		}
 		    			 else
@@ -221,7 +223,7 @@ public class Main {
 		    				LOGGER.info("enter new price");
 			    			 price=input.nextInt();
 			    			Apartment.changeApartmentPrice(apID, price);
-			    			LOGGER.info("Done!");
+			    			LOGGER.info(done);
 
 				    		}
 		    			 else
@@ -257,7 +259,7 @@ public class Main {
 		    			 user=MyData.checkLogin(username, password);
 		    			 phone=inputt.nextLine();
 		    			 User.changeOwnerPhoneNumber(user.getpId(), phone);
-		    			 LOGGER.info("Done!");
+		    			 LOGGER.info(done);
 		    		 }
 
 
@@ -271,7 +273,7 @@ public class Main {
 			    			 information=inputt.nextLine();
 
 		    				 Apartment.printservices(apID,information);
-		    				 LOGGER.info("Done!");
+		    				 LOGGER.info(done);
 		    				
 				    		}
 		    			 else
