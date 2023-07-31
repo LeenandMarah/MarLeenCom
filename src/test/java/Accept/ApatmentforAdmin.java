@@ -20,14 +20,14 @@ public class ApatmentforAdmin {
 	String newphoto="new photo";
 	@Given("admin wants {string}")
 	public void adminWants(String string) {
-	    assertTrue(string.equals("AddApartment"));
+	    assertEquals(string,"AddApartment");
 	}
 
 
 
 	@Given("building id is {string}")
 	public void buildingIdIs(String string) {
-		assertTrue(string.equals("1"));
+		assertEquals(string,"1");
 	    
 	}
 
@@ -35,7 +35,7 @@ public class ApatmentforAdmin {
 	public void addSuccesfully() {
 		oldsize=Apartment.sizeOfApartments();
 		newsize=Apartment.addApartment("1", "1", "phohpo",2, 3, 1,2);
-		assertTrue((oldsize+1)==(newsize));
+		assertEquals((oldsize+1),(newsize));
 		
 		
 				
@@ -57,7 +57,7 @@ public class ApatmentforAdmin {
 	@Then("changed succesfully")
 	public void changedSuccesfully() {
 		 result =Apartment.changeApartmentPhoto("1","new photo");
-		assertTrue(result==true);
+		assertEquals(result,true);
 	   
 	}
 	@Given("admin wants3 {string}")
@@ -68,26 +68,26 @@ public class ApatmentforAdmin {
 	@Then("price changed succesfully")
 	public void priceChangedSuccesfully() {
 		 result =Apartment.changeApartmentPrice("1",100);
-			assertTrue(result==true);
+			assertEquals(result,true);
 		
 	}
 	
 	@Given("admin wants4 {string}")
 	public void adminWants4(String string) {
-		assertTrue(string.equals("change Apartment max"));
+		assertEquals(string,"change Apartment max");
 	}
 
 	@Then("max changed succesfully")
 	public void maxChangedSuccesfully() {
 		
 		result =Apartment.changeApartmentMax("1",3);
-		assertTrue(result==true);
+		assertEquals(result,true);
 	   
 	}
 	
 	@Given("admin wants5 {string}")
 	public void adminWants5(String string) {
-		assertTrue(string.equals("change Apartment student Type"));
+		assertEquals(string,"change Apartment student Type");
 	}
 	   
 
@@ -95,7 +95,7 @@ public class ApatmentforAdmin {
 	public void studentTypeChangedSuccesfully() {
 
 		result =Apartment.changeApartmentStudentType("1",true);
-		assertTrue(result==true);
+		assertEquals(result,true);
 	    
 	}
 

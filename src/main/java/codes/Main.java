@@ -125,7 +125,7 @@ public class Main {
 
 		    			 user=MyData.checkLogin(username, password);
 		    			 BuldingInfo.findBuildingForOwner(user.getpId());
-		    			 for (Building b: BuldingInfo.Ownerbuildings)
+		    			 for (Building b: BuldingInfo.ownerbuildings)
 		    			 {
 
 		    				 System.out.println("building"+b.getbId());
@@ -133,7 +133,7 @@ public class Main {
 
 
 		    			 }
-		    			 BuldingInfo.Ownerbuildings.clear();
+		    			 BuldingInfo.ownerbuildings.clear();
 		    			 LOGGER.info("choose the bulding you want");
 		    			 buldingid=input.nextLine();
 
@@ -157,7 +157,7 @@ public class Main {
 		    			 UserInfo.findTenentForApartment(apID2);
 		    			 for(Tenants t: UserInfo.apartmentTenants)
 		    			 {
-		    				 System.out.println("Tenant "+t.getName()+" "+t.getPhoneNum());
+		    				 LOGGER.info("Tenant "+t.getName()+" "+t.getPhoneNum());
 		    			 }
 		    			 UserInfo.apartmentTenants.clear();
 

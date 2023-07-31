@@ -1,7 +1,7 @@
 package db;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
+
 
 import codes.Building;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class BuldingInfo {
 public static List<Building> buildings = new ArrayList<>();
 
-public static List<Building> Ownerbuildings = new ArrayList<>();
+public static List<Building> ownerbuildings = new ArrayList<>();
 
 	static {
 	
@@ -46,7 +46,7 @@ public static List<Building> Ownerbuildings = new ArrayList<>();
 			if(b.getOwnerId().equals(ownerId))
 			{
 
-				Ownerbuildings.add(b);
+				ownerbuildings.add(b);
 			}
 
 
