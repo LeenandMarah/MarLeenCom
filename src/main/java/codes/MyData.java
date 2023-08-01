@@ -16,7 +16,7 @@ public class MyData {
 	
 	public static void showError() {
 	    
-		LOGGER.info("You must Enter  a Real user");
+		LOGGER.info("You must Enter a Real user");
 		
 		
 	}
@@ -97,8 +97,8 @@ public class MyData {
 
 
 	public static String sendRequest() {
-		
-		LOGGER.info("you have new request "+"\n"+apID+" "+ photo+" " +numofbeds+" "+numofbath+" "+balcon+" "+floor+" "+max+" "+price);
+		String ss="you have new request "+"\n"+apID+" "+ photo+" " +numofbeds+" "+numofbath+" "+balcon+" "+floor+" "+max+" "+price;
+		LOGGER.info(ss);
 		
 		LOGGER.info("Accept ? yes or no");
 		answer=input.next();
@@ -111,7 +111,7 @@ public class MyData {
 
 
 	public static void saveRequest(String buldingid1, String apID1, String photo1, int numofbeds1, int numofbath1, int balcon1,
-			int floor1, int max1, int price1) {
+			int floor1) {
 		
 		buldingid=buldingid1;
 		apID=apID1;
@@ -120,8 +120,8 @@ public class MyData {
 		numofbath=numofbath1;
 		balcon= balcon1;
 		floor=floor1;
-		max=max1;
-		price=price1;
+		max=4;
+		price=100;
 		
 	}
 

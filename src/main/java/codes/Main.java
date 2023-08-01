@@ -192,7 +192,7 @@ public class Main {
 				    		 price=input.nextInt();
 				    
 				    		 MyData.requst=true;
-				    		 MyData.saveRequest(buldingid,apID,photo, numofbeds,numofbath, balcon, floor,max,price);
+				    		 MyData.saveRequest(buldingid,apID,photo, numofbeds,numofbath, balcon, floor);
 				    		 LOGGER.info(done);
 
 
