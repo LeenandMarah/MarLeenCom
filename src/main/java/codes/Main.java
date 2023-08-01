@@ -37,6 +37,7 @@ public class Main {
 		  String answer="";
 		  String phone;
 		  String information;
+		 
 		   int price;
 		  int numofbeds;
 		  int numofbath;
@@ -107,7 +108,8 @@ public class Main {
 	       }
 	       
 	       if(MyData.ownerIsLogged){
-	    	   LOGGER.info(left+" Welcome Owner "+username+right);
+	    	   String c1=left+" Welcome Owner "+username+right;
+	    	   LOGGER.info(c1);
 	    	   while(MyData.ownerIsLogged) {
 	    		   LOGGER.info("what would you like to do \n"+"Dashboard *** Send Request *** change apartment photo *** change apartment price *** change  phone number *** Available services");
 	    		   
@@ -141,14 +143,14 @@ public class Main {
 		    			 LOGGER.info("choose the Floor you want");
 		    			 floor= input.nextInt();
 		    			 Apartmentinfo.buldingApartments(buldingid,floor);
-		    			 for (Apartment a: Apartmentinfo.BuildingApartments )
+		    			 for (Apartment a: Apartmentinfo.buildingApartments )
 		    			 {
 
 		    				 LOGGER.info("apartment"+a.getaId());
 		    				 
 
 		    			 }
-		    			 Apartmentinfo.BuildingApartments.clear();
+		    			 Apartmentinfo.buildingApartments.clear();
 		    			 
 		    			 LOGGER.info("choose the apartment you want");
 		    			 apID2=inputt.nextLine();

@@ -9,7 +9,7 @@ import codes.*;
 
 public class Apartmentinfo {
 public static List<Apartment> apartments = new ArrayList<>();
-public static List<Apartment> BuildingApartments = new ArrayList<>();
+public static List<Apartment> buildingApartments = new ArrayList<>();
 private static final Logger LOGGER = Logger.getLogger(Apartmentinfo.class.getName());
 private static String photo=new String("https://images.search.yahoo.com/search/images;_ylt=AwrEo5D.T6hkDTULrBhXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZANMT0NVSTA1OFRfMQRzZWMDcGl2cw--?p=apartments+for+students&fr2=piv-web&type=E210US91215G0&fr=mcafee#id=68&iurl=https%3A%2F%2Fnyunews.com%2Fwp-content%2Fuploads%2F2017%2F04%2F033017_Housing_Alex-Muhawi-Ho_.jpg&action=click");
 	static {
@@ -214,7 +214,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 		for (Apartment a: Apartmentinfo.apartments)
 		{
 			if(a.getBuildId().equals(bid)&& (a.getFloorNum()==floor)) {
-				BuildingApartments.add(a);
+				buildingApartments.add(a);
 
 			}
 
