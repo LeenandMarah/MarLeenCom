@@ -85,15 +85,16 @@ public class Building {
 
 	public static void buildingfloor(String buldingid) {
 	
-	
+	  
          
 		b=findBuilding(buldingid);
 		floor=b.getFloors();
 		for(int i=floor; i>0;i--)
 		{
+			  String s="Floor"+Integer.toString(i);
 			
 			
-			LOGGER.info("Floor: {}");
+			LOGGER.info(s);
 		}
 
 

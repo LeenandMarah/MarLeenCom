@@ -72,7 +72,8 @@ public class Main {
 	       }
 		
 	       if(MyData.adminIsLogged){
-	    	   LOGGER.info(left+" Welcome Admin "+username+right);
+	    	   String c2=left+" Welcome Admin "+username+right;
+	    	   LOGGER.info(c2);
 	    	    
 	    	   while(MyData.adminIsLogged) {
 	    		 command=input.nextLine(); 
@@ -110,8 +111,10 @@ public class Main {
 	       if(MyData.ownerIsLogged){
 	    	   String c1=left+" Welcome Owner "+username+right;
 	    	   LOGGER.info(c1);
+	    	   
+	    	   String info="what would you like to do \n"+"Dashboard *** Send Request *** change apartment photo *** change apartment price *** change  phone number *** Available services";
 	    	   while(MyData.ownerIsLogged) {
-	    		   LOGGER.info("what would you like to do \n"+"Dashboard *** Send Request *** change apartment photo *** change apartment price *** change  phone number *** Available services");
+	    		   LOGGER.info(info);
 	    		   
 		    		 command=input.nextLine(); 
 		    		 if(command.equals(logO)){
@@ -201,8 +204,8 @@ public class Main {
 		    			 apID=input.nextLine();
 		    			 if(db.Apartmentinfo.ifFoundap(apID))
 				    		{
-		    				 Apartment ap =new Apartment();
-		    				ap= db.Apartmentinfo.findmyapartment(apID);
+		    				
+		    				 db.Apartmentinfo.findmyapartment(apID);
 		    				LOGGER.info("enter new photo");
 			    			 photo=input.nextLine();
 			    			Apartment.changeApartmentPhoto(apID, photo);
@@ -242,8 +245,8 @@ public class Main {
 				    		{
 
 		    				LOGGER.info("enter new Location");
-			    			String Location = input.nextLine();
-			    			Building.changeLocation(buldingid, Location);
+			    			String location = input.nextLine();
+			    			Building.changeLocation(buldingid, location);
 			    			LOGGER.info("Done!");
 
 				    		}
@@ -295,6 +298,7 @@ public class Main {
 	       
        
 	       if(MyData.tenantIsLogged){
+	    	   String c3=left+" Welcome Tenant "+username+right;
 	    	   Tenants ten=new Tenants();
 	    	   for(Tenants t : db.UserInfo.tenants) {
 	    		   if (t.getUsername().equals(username)) {
@@ -302,7 +306,7 @@ public class Main {
 	    			   
 	    		   }
 	    	   }
-	    	   LOGGER.info(left+" Welcome Tenant "+username+right);
+	    	   LOGGER.info(c3);
 	    	    while(MyData.tenantIsLogged) {
 	    	    	LOGGER.info("* Dashboard"+"* LogOut");
 		    		 command=input.nextLine(); 
