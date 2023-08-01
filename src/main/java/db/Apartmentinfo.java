@@ -11,7 +11,7 @@ public class Apartmentinfo {
 public static List<Apartment> apartments = new ArrayList<>();
 public static List<Apartment> buildingApartments = new ArrayList<>();
 private static final Logger LOGGER = Logger.getLogger(Apartmentinfo.class.getName());
-private static String photo=new String("https://images.search.yahoo.com/search/images;_ylt=AwrEo5D.T6hkDTULrBhXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZANMT0NVSTA1OFRfMQRzZWMDcGl2cw--?p=apartments+for+students&fr2=piv-web&type=E210US91215G0&fr=mcafee#id=68&iurl=https%3A%2F%2Fnyunews.com%2Fwp-content%2Fuploads%2F2017%2F04%2F033017_Housing_Alex-Muhawi-Ho_.jpg&action=click");
+private static String photo="https://images.search.yahoo.com/search/images;_ylt=AwrEo5D.T6hkDTULrBhXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZANMT0NVSTA1OFRfMQRzZWMDcGl2cw--?p=apartments+for+students&fr2=piv-web&type=E210US91215G0&fr=mcafee#id=68&iurl=https%3A%2F%2Fnyunews.com%2Fwp-content%2Fuploads%2F2017%2F04%2F033017_Housing_Alex-Muhawi-Ho_.jpg&action=click";
 	static {
 
 
@@ -120,8 +120,7 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
        return false;
 	}
 	
-	public static  int book(String command,Tenants t) {
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+	public static  int book(String command,Tenants t) { 
 		   LocalDateTime now = LocalDateTime.now();  
 		
 		if(isFull(command)) {
@@ -224,12 +223,12 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 	
 	public static int showBill(Tenants ten, String nc) {
 		
-		  Building b= new Building();
+		 
 		  Building k=null;
 		  
 		  for(Apartment i:apartments) {
 			  if(i.getaId().equals(nc)){
-				  k=b.findBuilding(nc);
+				  k=Building.findBuilding(nc);
 			  }
 		  }
         
@@ -237,8 +236,8 @@ private static String photo=new String("https://images.search.yahoo.com/search/i
 		  User s =new User();
 		  r=s.findMyOwner(k.getOwnerId());
 		  
-          
-		LOGGER.info("-------------------------------------------"+"\n"+"Tenant:"+ten.toString()+"Owner:"+r.toString());
+          String str="-------------------------------------------"+"\n"+"Tenant:"+ten.toString()+"Owner:"+r.toString();
+		LOGGER.info(str);
 		
 		return 1;
 	}

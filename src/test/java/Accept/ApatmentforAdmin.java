@@ -20,14 +20,14 @@ public class ApatmentforAdmin {
 	String newphoto="new photo";
 	@Given("admin wants {string}")
 	public void adminWants(String string) {
-	    assertEquals(string,"AddApartment");
+	    assertEquals("AddApartment",string);
 	}
 
 
 
 	@Given("building id is {string}")
 	public void buildingIdIs(String string) {
-		assertEquals(string,"1");
+		assertEquals("1",string);
 	    
 	}
 
@@ -44,31 +44,31 @@ public class ApatmentforAdmin {
 	
 	@Given("admin wants2 {string}")
 	public void adminWants2(String string) {
-		assertEquals(string,"change Apartment photo");
+		assertEquals("change Apartment photo",string);
 	    
 	}
 	
 	@Given("aId is {string}")
 	public void aIdIs(String string) {
-		assertEquals(string,"1");
+		assertEquals("1",string);
 	    
 	}
 
 	@Then("changed succesfully")
 	public void changedSuccesfully() {
 		 result =Apartment.changeApartmentPhoto("1","new photo");
-		assertEquals(result,true);
+		assertEquals(true,result);
 	   
 	}
 	@Given("admin wants3 {string}")
 	public void adminWants3(String string) {
-		assertEquals(string,"change Apartment price");
+		assertEquals("change Apartment price",string);
 	}
 
 	@Then("price changed succesfully")
 	public void priceChangedSuccesfully() {
 		 result =Apartment.changeApartmentPrice("1",100);
-			assertEquals(result,true);
+			assertEquals(true,result);
 		
 	}
 	

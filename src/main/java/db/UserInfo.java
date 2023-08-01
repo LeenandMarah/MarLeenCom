@@ -8,11 +8,15 @@ import java.util.logging.Logger;
 import codes.*;
 
 public class UserInfo {
+	
+	private UserInfo() {
+		
+	}
 	private static final Logger LOGGER = Logger.getLogger(UserInfo.class.getName());
 	
 	
-	public static List<User> users = new ArrayList<>();
-	public static List<Tenants> tenants = new ArrayList<>();
+	public  static List<User> users = new ArrayList<>();
+	 public static List<Tenants> tenants = new ArrayList<>();
 	public static List<Tenants> apartmentTenants =  new ArrayList<>();
 	
 	static {
@@ -24,17 +28,17 @@ public class UserInfo {
     
     
     
-    User e =new User("fuad","123f","3","Tenant","12345677");
+    User e =new User("fuad","123f","3","Tenant","1235677");
 
    
 	
     User t =new User("toto","123f","4","Tenant","12345677");
-    Tenants tt=new Tenants("fuad","123f","3","Tenant","12345677");
+    Tenants tt=new Tenants("fuad","123f","3","Tenant","1345677");
     tt.setAge("19");
     tt.setMajor("CE");
     tt.setName("fuad fuad");
     tt.setApartId("");
-    Tenants ttt=new Tenants ("toto","123f","4","Tenant","12345677");
+    Tenants ttt=new Tenants ("toto","123f","4","Tenant","2345677");
      
     ttt.setAge("20");
     ttt.setMajor("CEE");
