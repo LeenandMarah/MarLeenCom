@@ -49,12 +49,12 @@ public class extraApart {
 	
 	@Given("apartId equal {string}")
 	public void apart_id_equal(String string) {
-		assertEquals(string,"1");
+		assertEquals("1",string);
 	}
 
 	@Given("floor is {string}")
 	public void floor_is(String string) {
-		assertEquals(string,"1");
+		assertEquals("1",string);
 	}
 
 	@Then("found is good")

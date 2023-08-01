@@ -15,7 +15,7 @@ public class Request {
 	String answer;
 	@Given("Owner sent request {string}")
 	public void ownerSentRequest(String string) {
-		assertTrue(string.equals("Send Request"));
+		assertEquals("Send Request",string);
 		MyData.saveRequest("1", "1", "1", 2, 2, 1, 1, 1, 1);
 		 answer=MyData.sendRequest();
 		

@@ -74,20 +74,20 @@ public class ApatmentforAdmin {
 	
 	@Given("admin wants4 {string}")
 	public void adminWants4(String string) {
-		assertEquals(string,"change Apartment max");
+		assertEquals("change Apartment max",string);
 	}
 
 	@Then("max changed succesfully")
 	public void maxChangedSuccesfully() {
 		
 		result =Apartment.changeApartmentMax("1",3);
-		assertEquals(result,true);
+		assertEquals(true,result);
 	   
 	}
 	
 	@Given("admin wants5 {string}")
 	public void adminWants5(String string) {
-		assertEquals(string,"change Apartment student Type");
+		assertEquals("change Apartment student Type",string);
 	}
 	   
 
@@ -95,7 +95,7 @@ public class ApatmentforAdmin {
 	public void studentTypeChangedSuccesfully() {
 
 		result =Apartment.changeApartmentStudentType("1",true);
-		assertEquals(result,true);
+		assertEquals(true,result);
 	    
 	}
 
