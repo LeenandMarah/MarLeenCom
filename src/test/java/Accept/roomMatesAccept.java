@@ -4,6 +4,7 @@ import io.cucumber.java.en.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 
@@ -12,28 +13,28 @@ public class roomMatesAccept {
 	
 	@Given("tenant  booked correctly")
 	public void tenantBookedCorrectly() {
-	   assertTrue(db.Apartmentinfo.book("2",db.UserInfo.tenants.get(0))==1);
+	   assertEquals(1,db.Apartmentinfo.book("2",db.UserInfo.tenants.get(0)));
 	}
 
 	@Given("tenant choosed {string}")
 	public void tenantChoosed(String string) {
 	   
-		assertEquals(string,"y");
+		assertEquals("y",string);
 	}
 
 	@Then("show his roomMates done")
 	public void showHisRoomMatesDone() {
-	   assertEquals( db.Apartmentinfo.myNighbours("2"),1);
+	   assertEquals( 1,db.Apartmentinfo.myNighbours("2"));
 	}
 	@Given("tenant  booked correctlyyy")
 	public void tenantBookedCorrectlyyy() {
-	 assertFalse(db.Apartmentinfo.book("2",db.UserInfo.tenants.get(0))==1);
+	 assertNotEquals(1,db.Apartmentinfo.book("2",db.UserInfo.tenants.get(0)));
 	}
 
 
 	@Given("tenant choosedn {string}")
 	public void tenantChoosedn(String string) {
-		assertEquals(string,"n");
+		assertEquals("n",string);
 	}
 	@Then("dont show")
 	public void dontShow() {
@@ -47,7 +48,7 @@ public class roomMatesAccept {
 
 	@Then("show failed")
 	public void showFailed() {
-		 assertFalse( db.Apartmentinfo.myNighbours("3")==1);
+		 assertNotEquals( 1,db.Apartmentinfo.myNighbours("3"));
 	}
 
 

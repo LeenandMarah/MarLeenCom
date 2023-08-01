@@ -14,23 +14,23 @@ public class OwnerPossibility {
 	boolean result;
 	@Given("Owner wants {string}")
 	public void ownerWants(String string) {
-		assertEquals(string,"Add photo");
+		assertEquals("Add photo",string);
 	}
 
 	@Given("AID id is {string}")
 	public void aidIdIs(String string) {
-		assertEquals(string,"1");
+		assertEquals("1",string);
 	}
 
 	@Then("added succesfully")
 	public void addedSuccesfully() {
 		 result = Apartment.changeApartmentPhoto("1","new photo");
-		assertEquals(result,true);
+		assertEquals(true,result);
 	}
 	
 	@Given("Owner wants2 {string}")
 	public void ownerWants2(String string) {
-		assertEquals(string,"Available services");
+		assertEquals("Available services",string);
 	}
 
 	@Then("printed succesfully")
@@ -40,40 +40,40 @@ public class OwnerPossibility {
 
 	@Given("Owner wants3 {string}")
 	public void ownerWants3(String string) {
-		assertEquals(string,"change price");
+		assertEquals("change price",string);
 	}
 
 	@Then("price is changed succesfully")
 	public void priceIsChangedSuccesfully() {
 		 result =Apartment.changeApartmentPrice("1",100);
-			assertEquals(result,true);
+			assertEquals(true,result);
 	}
 
 	@Given("Owner wants4 {string}")
 	public void ownerWants4(String string) {
-		assertEquals(string,"change phone number");
+		assertEquals("change phone number",string);
 	}
 
 	@Given("Owner id is {string}")
 	public void ownerIdIs(String string) {
 	    
-		assertEquals(string,"1");
+		assertEquals("1",string);
 	}
 	@Then("phone number is changed succesfully")
 	public void phoneNumberIsChangedSuccesfully() {
 		
 		result =User.changeOwnerPhoneNumber("1", "0599765");
-		assertEquals(result,true);
+		assertEquals(true,result);
 	}
 
 	@Given("Owner wants5 {string}")
 	public void ownerWants5(String string) {
-		assertEquals(string,"change location");
+		assertEquals("change location",string);
 	}
 
 	@Given("Building id is {string}")
 	public void buildingIdIs(String string) {
-		assertEquals(string,"1");
+		assertEquals("1",string);
 	}
 
 	@Then("location is changed succesfully")

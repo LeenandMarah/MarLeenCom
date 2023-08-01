@@ -12,7 +12,7 @@ public class generalInfoAccept {
 	
 	@Given("building id isss {string}")
 	public void building_id_isss(String string) {
-	    assertEquals(string,"1");
+	    assertEquals("1",string);
 	}
 
 	@Then("building search done")
@@ -22,7 +22,7 @@ public class generalInfoAccept {
 
 	@Given("aId iss {string}")
 	public void a_id_iss(String string) {
-		 assertEquals(string,"9");
+		 assertEquals("9",string);
 	}
 
 	@Then("building search faild")
@@ -32,7 +32,7 @@ public class generalInfoAccept {
 
 	@Given("aId was {string}")
 	public void a_id_was(String string) {
-		  assertEquals(string,"1");
+		  assertEquals("1",string);
 	}
 
 

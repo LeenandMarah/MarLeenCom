@@ -9,33 +9,33 @@ public class BookAccept {
 
 	@Given("tenant wants1 {string}")
 	public void tenantWants1(String string) {
-		 assertEquals(string,"book");
+		 assertEquals("book",string);
 	    
 	}
 	@Given("apartment id is {string}")
 	public void apartmentIdIs(String string) {
-		 assertEquals(string,"2");
+		 assertEquals("2",string);
 	}
 	@Then("booked done")
 	public void bookedDone() {
 		
-	    assertEquals(db.Apartmentinfo.book("2",db.UserInfo.tenants.get(0)),1 );
+	    assertEquals(1,db.Apartmentinfo.book("2",db.UserInfo.tenants.get(0)) );
 	}
 	
 	@Then("bill is showed")
 	public void billIsShowed() {
-	    assertEquals(db.Apartmentinfo.showBill(db.UserInfo.tenants.get(0),"2"),1);
+	    assertEquals(1,db.Apartmentinfo.showBill(db.UserInfo.tenants.get(0),"2"));
 	}
 	
 	@Given("apartment id is1 {string}")
 	public void apartmentIdIs1(String string) {
-		assertEquals(string,"1");
+		assertEquals("1",string);
 	    
 	}
 
 	@Then("booked falied")
 	public void bookedFalied() {
-		 assertEquals(db.Apartmentinfo.book("1",db.UserInfo.tenants.get(0)),0);
+		 assertEquals(0,db.Apartmentinfo.book("1",db.UserInfo.tenants.get(0)));
 	    
 	}
 }

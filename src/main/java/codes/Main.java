@@ -48,9 +48,9 @@ public class Main {
 		  String nc;
 		  int r;
 		
- 
+           String head=left+"Sakan Marlee "+right;
 
-		LOGGER.info(left+"Sakan Marlee "+right);
+		LOGGER.info(head);
 		
 		
 		
@@ -132,8 +132,8 @@ public class Main {
 		    			 BuldingInfo.findBuildingForOwner(user.getpId());
 		    			 for (Building b: BuldingInfo.ownerbuildings)
 		    			 {
-
-		    				 System.out.println("building"+b.getbId());
+                             String p="building"+b.getbId();
+		    				LOGGER.info(p);
 		    				
 
 
@@ -318,8 +318,8 @@ public class Main {
 		    		 }
 		    		 
 		    		 if(command.equals("Dashboard")) {
-		    			
-		    	       LOGGER.info(left+" Tenant Dashboard "+right);
+		    			String dd = left+" Tenant Dashboard "+right;
+		    	       LOGGER.info(dd);
 		    	       LOGGER.info("                   ------------Aviable Houses---------"                            );
 		    	       LOGGER.info("\n"+"* view"+"\n"+"* show info"+"\n"+"* book"+"Furneture");
 		    	       command = input.nextLine();

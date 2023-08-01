@@ -1,5 +1,6 @@
 package Accept;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -8,7 +9,7 @@ public class TennantAble {
 
 	@Given("tentant choose {string}")
 	public void tentantChoose(String string) {
-	    assertTrue(string.equals("view"));
+	    assertEquals("view",string);
 	}
 
 
@@ -19,12 +20,12 @@ public class TennantAble {
 
 	@Given("tenant wants {string}")
 	public void tenantWants(String string) {
-		 assertTrue(string.equals("show info"));
+		 assertEquals("show info",string);
 	}
 
 	@Given("gives apartmentID is {string}")
 	public void givesApartmentIDIs(String string) {
-	    assertTrue(string.equals("1"));
+	    assertEquals("1",string);
 	}
 
 	@Then("view correctly")
@@ -34,7 +35,7 @@ public class TennantAble {
 
 	@Given("gives apartmentID is0 {string}")
 	public void givesApartmentIDIs0(String string) {
-		assertTrue(string.equals("0"));
+		assertEquals("0",string);
 	}
 
 	

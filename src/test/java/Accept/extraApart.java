@@ -7,12 +7,12 @@ import io.cucumber.java.en.*;
 public class extraApart {
 	@Given("apartId is {string}")
 	public void apart_id_is(String string) {
-	   assertEquals(string,"1");
+	   assertEquals("1",string);
 	}
 
 	@Given("apartId iss {string}")
 	public void apart_id_iss(String string) {
-		  assertEquals(string,"9");
+		  assertEquals("9",string);
 	}
 	
 	@Then("foundis done")
@@ -28,22 +28,22 @@ public class extraApart {
 	
 	@Given("apartId was {string}")
 	public void apart_id_was(String string) {
-		 assertEquals(string,"9");
+		 assertEquals("9",string);
 	}
 
 	@Then("found will faild")
 	public void found_will_faild() {
-		 assertEquals(Apartmentinfo.findmyapartment("9"),null);
+		 assertNull(Apartmentinfo.findmyapartment("9"));
 	}
 
 	@Given("apartId wass {string}")
 	public void apart_id_wass(String string) {
-		 assertEquals(string,"1");
+		 assertEquals("1",string);
 	}
 
 	@Then("found willl success")
 	public void found_willl_success() {
-		 assertTrue(Apartmentinfo.findmyapartment("9")!=null);
+		 assertNotNull(Apartmentinfo.findmyapartment("9"));
 	}
 
 	

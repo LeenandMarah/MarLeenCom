@@ -23,7 +23,7 @@ public class Request {
 
 	@Given("Admin Accepted is {string}")
 	public void adminAcceptedIs(String string) {
-		assertTrue(answer.equals("yes"));
+		assertEquals("yes",answer);
 		
 		
 	    
@@ -37,7 +37,7 @@ public class Request {
 
 	@Given("Admin Accepted1 is {string}")
 	public void adminAccepted1Is(String string) {
-	 	assertEquals(answer,"no");
+	 	assertEquals("no",answer);
 	}
 	@Then("offer is rejected")
 	public void offerIsRejected() {
