@@ -217,10 +217,10 @@ public static  int sizeOfApartments() {
 	
 	public static boolean changeApartmentPhoto(String apid,String photo)
 	{
-		  //Apartment pp =new Apartment("1","1","ff",2,2,0);
-		     Apartment pp =new Apartment();
+		  Apartment pp =new Apartment("1","1","ff",2,2,0);
+		   
 			pp= Apartment.findmyapartment(apid);
-			 pp.setPhoto(photo);
+			   pp.setPhoto(photo);
 			 return true;
 
 
