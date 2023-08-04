@@ -22,7 +22,7 @@ public class Apartment {
 	private boolean full;
 	private boolean studentType;
 	
-	 public static Apartment pp =new Apartment("1","1","ff",2,2,0);
+	
 	
 	
 	
@@ -217,7 +217,8 @@ public static  int sizeOfApartments() {
 	
 	public static boolean changeApartmentPhoto(String apid,String photo)
 	{
-		
+		  //Apartment pp =new Apartment("1","1","ff",2,2,0);
+		     Apartment pp =new Apartment();
 			pp= Apartment.findmyapartment(apid);
 			 pp.setPhoto(photo);
 			 return true;
@@ -231,7 +232,7 @@ public static  int sizeOfApartments() {
 
 
 	public static boolean changeApartmentPrice(String apID, int price2) {
-	
+		  Apartment pp =new Apartment();
 	
 			pp= Apartment.findmyapartment(apID);
 			 pp.setPrice(price2);
@@ -245,7 +246,7 @@ public static  int sizeOfApartments() {
 	public static boolean changeApartmentMax(String apID, int max2) {
 		
 
-	
+		  Apartment pp =new Apartment();
 
 		pp= Apartment.findmyapartment(apID);
 		 pp.setMax(max2);
@@ -257,7 +258,7 @@ public static  int sizeOfApartments() {
 
 	public static boolean changeApartmentStudentType(String apID, boolean studentType2) {
 	
-   
+		  Apartment pp =new Apartment();
 
 		pp= Apartment.findmyapartment(apID);
 		 pp.setStudentType(studentType2);
@@ -267,7 +268,7 @@ public static  int sizeOfApartments() {
 
 	public static boolean printservices(String apID,String newinfo) {
 		
-
+		  Apartment pp =new Apartment();
 	
 
 		pp= Apartment.findmyapartment(apID);
