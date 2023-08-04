@@ -224,7 +224,7 @@ private static String photo="https://images.search.yahoo.com/search/images;_ylt=
 	public static int showBill(Tenants ten, String nc) {
 		
 		 
-		  Building k=null;
+		  Building k=new Building();
 		  
 		  for(Apartment i:apartments) {
 			  if(i.getaId().equals(nc)){
