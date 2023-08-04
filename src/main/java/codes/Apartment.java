@@ -205,19 +205,24 @@ public static  int sizeOfApartments() {
 
   
 	public static Apartment findmyapartment(String apid) {
+		Apartment rett=new Apartment();
 		for(int i=0;i<db.Apartmentinfo.apartments.size();i++)
 		{
-			if(Apartmentinfo.apartments.get(i).getaId().equals(apid))
-				return db.Apartmentinfo.apartments.get(i);
+			if(Apartmentinfo.apartments.get(i).getaId().equals(apid)) {
+				rett= db.Apartmentinfo.apartments.get(i);
+			} 
+			    
 			
 		}
-		return null;
+	
+		return rett;
 		
 	}
 	
 	public static boolean changeApartmentPhoto(String apid,String photo)
 	{
-		  Apartment pp =new Apartment("1","1","ff",2,2,0);
+		    
+		Apartment pp=new Apartment();
 		   
 			pp= Apartment.findmyapartment(apid);
 			   pp.setPhoto(photo);
