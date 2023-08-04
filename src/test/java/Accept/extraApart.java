@@ -43,7 +43,7 @@ public class extraApart {
 
 	@Then("found willl success")
 	public void found_willl_success() {
-		 assertNotNull(Apartmentinfo.findmyapartment("9"));
+		 assertNotNull(Apartmentinfo.findmyapartment("1"));
 	}
 
 	

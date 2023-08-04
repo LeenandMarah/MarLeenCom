@@ -1,8 +1,7 @@
 package Accept;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
+import static org.junit.Assert.*;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,17 +12,15 @@ public class LogCode {
 	String username;
 	String password;
 	String type;
-	MyData d;
+
 	Boolean status;
-	public LogCode(MyData d) {
-		this.d=d;
-	}
+	
 
 
 
 @Given("that user is not logged in")
 public void thatUserIsNotLoggedIn() {
-	assertTrue(d.adminIsLogged==false&&d.ownerIsLogged==false&&d.tenantIsLogged==false);
+	assertTrue(MyData.adminIsLogged ==false || MyData.ownerIsLogged==false || MyData.tenantIsLogged==false);
 }
 
 @When("username is {string}")
@@ -38,30 +35,30 @@ public void passwordIs(String string) {
 
 @Then("logged in successfully as Admin")
 public void loggedInSuccessfullyAsAdmin() {
-      d.checkLogin(username, password);
-      assertTrue(d.adminIsLogged);
+      MyData.checkLogin(username, password);
+      assertTrue(MyData.adminIsLogged);
 }
 
 
 
 @Then("log in faild")
 public void logInFaild() {
-	 d.checkLogin(username, password);
-     assertTrue(d.adminIsLogged==false||d.ownerIsLogged==false||d.tenantIsLogged==false);
+	 MyData.checkLogin(username, password);
+     assertTrue(MyData.adminIsLogged==false||MyData.ownerIsLogged==false||MyData.tenantIsLogged==false);
 }
 
 
 @Then("logged in successfully as owner")
 public void loggedInSuccessfullyAsOwner() {
-	 d.checkLogin(username, password);
+	MyData.checkLogin(username, password);
    
 }
 
 
 @Then("logged in successfully as tenant")
 public void loggedInSuccessfullyAsTenant() {
-	 d.checkLogin(username, password);
-     assertTrue(d.tenantIsLogged);
+	MyData.checkLogin(username, password);
+     assertTrue(MyData.tenantIsLogged);
 }
 	
 	
