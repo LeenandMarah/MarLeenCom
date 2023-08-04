@@ -66,15 +66,17 @@ public class User {
 
 	}
 	private static User findMyUser(String id) {
+		User i=new User();
+		
 		for (User a: UserInfo.users)
 		{
 			if(a.getpId().equals(id)) {
-				 return a;
+				i= a;
 
 			}
 
 		}
-		return null;
+		return i;
 	}
 
 	public User findMyOwner(String id)

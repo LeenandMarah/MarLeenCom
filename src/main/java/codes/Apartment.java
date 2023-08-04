@@ -227,7 +227,7 @@ public static  int sizeOfApartments() {
 			pp= Apartment.findmyapartment(apid);
 			   pp.setPhoto(photo);
 			 return true;
-
+        
 
 
 	}

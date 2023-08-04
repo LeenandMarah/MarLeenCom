@@ -65,13 +65,14 @@ public class Building {
 	}
 
 	public static Building findBuilding(String buldingid) {
+		Building n=new Building();
 		for(int i=0;i<db.BuldingInfo.buildings.size();i++)
 		{
 			if(db.BuldingInfo.buildings.get(i).getbId().equals(buldingid))
-				return db.BuldingInfo.buildings.get(i);
+				n= db.BuldingInfo.buildings.get(i);
 
 		}
-		return null;
+		return n;
 	}
 	public static boolean changeLocation(String buldingid ,String loc) {
 		for(int i=0;i<db.BuldingInfo.buildings.size();i++)
