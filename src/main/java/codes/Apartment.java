@@ -22,7 +22,7 @@ public class Apartment {
 	private boolean full;
 	private boolean studentType;
 	
-	 static  Apartment pp =new Apartment("1","1","ff",2,2,0);
+	 public static Apartment pp =new Apartment("1","1","ff",2,2,0);
 	
 	
 	

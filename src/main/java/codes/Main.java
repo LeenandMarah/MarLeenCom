@@ -42,7 +42,6 @@ public class Main {
 		  int numofbeds;
 		  int numofbath;
 		  int balcon;
-		  int max;
 		  String photo;
 		  int floor;
 		  String nc;
@@ -186,11 +185,8 @@ public class Main {
 				    		 balcon=input.nextInt();
 				    		 LOGGER.info("enter number of floor");
 				    		 floor=input.nextInt();
-				    		 LOGGER.info("enter number of people");
-				    		 max=input.nextInt();
-				    		 LOGGER.info("enter price");
-				    		 price=input.nextInt();
-				    
+				    		 
+				    						    
 				    		 MyData.requst=true;
 				    		 MyData.saveRequest(buldingid,apID,photo, numofbeds,numofbath, balcon, floor);
 				    		 LOGGER.info(done);
