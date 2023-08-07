@@ -49,11 +49,11 @@ public class Main {
 		
            String head=left+"Sakan Marlee "+right;
 
-		LOGGER.info(head);
+		LOGGER.info("-> -> -> -> -> -> -> -> -> ->"+"Sakan Marlee "+"<- <- <- <- <- <- <- <- <- <-");
 		
 		
 		
-		
+		// start here
 		while(true) {
 		LOGGER.info("Enter username:");
 		
