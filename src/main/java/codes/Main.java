@@ -47,7 +47,7 @@ public class Main {
 		  String nc;
 		  int r;
 		
-           String head=left+"Sakan Marlee "+right;
+          // String head=left+"Sakan Marlee "+right;
 
 		LOGGER.info("-> -> -> -> -> -> -> -> -> ->"+"Sakan Marlee "+"<- <- <- <- <- <- <- <- <- <-");
 		
