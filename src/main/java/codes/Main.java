@@ -108,8 +108,8 @@ public class Main {
 	       }
 	       
 	       if(MyData.ownerIsLogged){
-	    	 //  String c1=left+" Welcome Owner "+username+right;
-	    	   LOGGER.info(left+" Welcome Owner "+username+right);
+	    	 String c1=left+" Welcome Owner "+username+right;
+	    	   LOGGER.info(c1);
 	    	   
 	    	   String info="what would you like to do \n"+"Dashboard *** Send Request *** change apartment photo *** change apartment price *** change  phone number *** Available services";
 	    	   while(MyData.ownerIsLogged) {
